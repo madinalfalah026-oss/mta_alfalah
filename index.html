@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+*<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Madrasah Diniyah Al Falah Kota Malang</title>
-<meta name="description" content="Situs resmi Madrasah Diniyah Al Falah Kota Malang — Profil, Galeri, Pendaftaran Santri Baru, dan Kontak.">
+<meta name="description" content="Situs resmi Madin Al Falah Kota Malang — Profil, Galeri, Pendaftaran Santri Baru, dan Kontak.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
@@ -202,32 +202,6 @@ table.tbl tr:last-child td{border-bottom:none;}
 .photo-grid img{width:100%; height:100%; object-fit:cover;}
 @media(max-width:700px){.photo-grid{grid-template-columns:repeat(2,1fr);}}
 
-/* --- slot gambar JPG yang bisa diganti pengurus lewat KONTEN --- */
-.content-img{width:100%; border-radius:var(--radius); box-shadow:var(--shadow); display:block; object-fit:contain; background:var(--white);}
-.img-slot{margin-top:16px;}
-.img-slot.tall img{max-height:760px; object-fit:contain; width:100%; background:var(--white);}
-.img-placeholder{
-  border:2px dashed var(--gold); border-radius:var(--radius); background:var(--cream-2); color:#5B4A20;
-  padding:36px 20px; text-align:center; font-size:.85rem; line-height:1.6;
-}
-.img-placeholder b{display:block; color:var(--emerald-deep); font-size:.95rem; margin-bottom:6px;}
-.thumb-card{border-radius:10px; overflow:hidden; border:1px solid var(--line); background:var(--white); box-shadow:var(--shadow); display:block;}
-.thumb-card img{width:100%; aspect-ratio:4/3; object-fit:cover;}
-.thumb-card.video-thumb{position:relative;}
-.thumb-card.video-thumb::after{
-  content:'▶'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-  font-size:2rem; color:#fff; background:rgba(10,52,42,.28);
-}
-.gallery-loading{
-  grid-column:1/-1; display:flex; align-items:center; gap:12px; color:#4B5D53; font-size:.9rem;
-  padding:30px 10px; justify-content:center;
-}
-.spinner{
-  width:18px; height:18px; border:3px solid var(--sage); border-top-color:var(--emerald); border-radius:50%;
-  animation:spin .8s linear infinite;
-}
-@keyframes spin{to{transform:rotate(360deg);}}
-
 .faq{border:1px solid var(--line); border-radius:10px; margin-bottom:10px; overflow:hidden; background:var(--white);}
 .faq summary{padding:16px 18px; cursor:pointer; font-weight:600; color:var(--emerald-deep); list-style:none; display:flex; justify-content:space-between; align-items:center;}
 .faq summary::-webkit-details-marker{display:none;}
@@ -285,8 +259,8 @@ footer a:hover{color:var(--gold-light);}
         <svg viewBox="0 0 24 24" fill="none" stroke="#0A342A" stroke-width="1.6"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 15.9 6.8 18.1l1-5.8L3.5 8.2l5.9-.9L12 2z"/></svg>
       </span>
       <span class="brand-text">
-        <span class="name">MD Al Falah</span><br>
-        <span class="sub">Kota Malang</span>
+        <span class="name">MDTU Al Falah Kota Malang</span><br>
+        <span class="sub">NISM: 311235730225</span>
       </span>
     </a>
 
@@ -310,14 +284,14 @@ footer a:hover{color:var(--gold-light);}
     <div class="container hero-inner">
       <div class="bismillah arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
       <h1>Menempa Generasi Qur'ani, Berakhlak, dan Cinta Ilmu</h1>
-      <p class="lead">Madrasah Diniyah Al Falah Kota Malang membina putra-putri Anda dalam membaca Al-Qur'an, memahami dasar agama, dan berakhlak mulia — sejak sore hingga menjelang Maghrib, tanpa mengganggu sekolah formal.</p>
+      <p class="lead">Madrasah Diniyah Al Falah Kota Malang membina putra-putri Anda dalam membaca Al-Qur'an, memahami dasar agama, dan berakhlak mulia — sejak sore menjelang Maghrib sd Isya', tanpa mengganggu sekolah formal.</p>
       <div class="btn-row">
         <a class="btn btn-gold" href="#pendaftaran-formulir" onclick="gotoPage('pendaftaran','formulir')">Daftar Santri Baru</a>
         <a class="btn btn-outline" href="#profil-sejarah" onclick="gotoPage('profil','sejarah')">Kenali Kami</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><b>19+</b><span>Tahun Mengabdi</span></div>
-        <div class="stat"><b>300+</b><span>Alumni Santri</span></div>
+        <div class="stat"><b>7+</b><span>Tahun Mengabdi</span></div>
+        <div class="stat"><b>20</b><span>Alumni Santri</span></div>
         <div class="stat"><b>12</b><span>Ustadz &amp; Ustadzah</span></div>
       </div>
     </div>
@@ -338,31 +312,75 @@ footer a:hover{color:var(--gold-light);}
       <article class="subpage" data-page="beranda" data-sub="sambutan">
         <div class="eyebrow">Beranda</div>
         <h2>Sambutan Kepala Madrasah</h2>
-        <p class="desc">Berisi kata sambutan Kepala Madrasah dan sekilas profil madrasah.</p>
-        <div class="gallery-note" style="margin:18px 0 22px;">
-          📁 Gambar diambil otomatis dari folder Google Drive. Operator cukup menambah/mengganti file di dalam folder tersebut.
+        <div class="grid grid-2" style="margin-top:26px; align-items:start;">
+          <div class="card">
+            <div class="quote-block">
+              "Pendidikan diniyah bukan sekadar mengajar mengeja huruf hijaiyah, tetapi menanamkan akar keimanan yang akan menopang anak-anak kita sepanjang hidupnya."
+            </div>
+            <p style="margin-top:20px;">Assalamu'alaikum warahmatullahi wabarakatuh.</p>
+            <p style="margin-top:12px;">Puji syukur kami panjatkan kehadirat Allah SWT atas segala nikmat dan kemudahan sehingga Madrasah Diniyah Al Falah Kota Malang dapat terus istiqamah membina generasi Qur'ani di tengah masyarakat. Selama hampir dua dekade, kami berkomitmen menjadi rumah kedua bagi putra-putri Bapak/Ibu untuk belajar membaca Al-Qur'an, memahami akidah, fikih, dan akhlak dengan cara yang menyenangkan dan penuh kasih sayang.</p>
+            <p style="margin-top:12px;">Kami mengundang Bapak/Ibu untuk bergabung dan mempercayakan pendidikan agama anak kepada kami. Semoga Allah senantiasa memudahkan langkah kita dalam mendidik generasi yang shalih dan shalihah.</p>
+            <p style="margin-top:16px; font-weight:600; color:var(--emerald-deep);">Ustadz DR. Andi Nugraha.,MSi.<br><span style="font-weight:400; color:#4B5D53; font-size:.85rem;">Kepala Madrasah Diniyah Al Falah Kota Malang</span></p>
+          </div>
+          <div class="card" style="background:var(--sage);">
+            <h3 style="font-size:1.1rem; margin-bottom:14px;">Sekilas Madrasah</h3>
+            <ul style="display:flex; flex-direction:column; gap:12px; font-size:.92rem;">
+              <li>📍 Berlokasi di Kota Malang, mudah diakses dari kelurahan sekitar.</li>
+              <li>🕐 Kegiatan dari menjelang magrib sd Isya, Rabo sd Sabtu.</li>
+              <li>📖 Jenjang Ula (dasar) Tahun ke 1, 2, 3 dan 4 sesuai pendaftaran santri.</li>
+              <li>🤝 Terbuka untuk santri baru sepanjang tahun ajaran.</li>
+            </ul> 
+          </div>
         </div>
-        <div class="photo-grid" data-drivefolder="folderSambutan"></div>
       </article>
 
       <!-- 1.2 Visi Misi -->
       <article class="subpage" data-page="beranda" data-sub="visimisi">
         <div class="eyebrow">Beranda</div>
         <h2>Visi, Misi &amp; Tujuan</h2>
-        <div class="gallery-note" style="margin:18px 0 22px;">
-          📁 Gambar diambil otomatis dari folder Google Drive. Operator cukup menambah/mengganti file di dalam folder tersebut.
+        <div class="grid grid-3" style="margin-top:26px;">
+          <div class="card">
+            <span class="badge">Visi</span>
+            <p style="margin-top:14px;">Menjadi lembaga pendidikan diniyah yang unggul dalam membentuk generasi Qur'ani, berakidah lurus, dan berakhlak mulia di tengah masyarakat Kota Malang.</p>
+          </div>
+          <div class="card">
+            <span class="badge">Misi</span>
+            <ul style="margin-top:14px; display:flex; flex-direction:column; gap:8px; font-size:.92rem;">
+              <li>• Membimbing santri membaca Al-Qur'an dengan tartil.</li>
+              <li>• Menanamkan akidah, fikih, dan akhlak sejak dini.</li>
+              <li>• Membangun kedekatan santri dengan masjid dan lingkungan.</li>
+              <li>• Menjalin sinergi aktif dengan orang tua/wali santri.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span class="badge">Tujuan</span>
+            <p style="margin-top:14px;">Menghasilkan santri yang mampu membaca Al-Qur'an dengan baik, memahami dasar-dasar ilmu agama, dan mengamalkan akhlak Islami dalam keseharian.</p>
+          </div>
         </div>
-        <div class="photo-grid" data-drivefolder="folderVisiMisiTujuan"></div>
       </article>
 
       <!-- 1.3 Berita -->
       <article class="subpage" data-page="beranda" data-sub="berita">
         <div class="eyebrow">Beranda</div>
         <h2>Berita &amp; Pengumuman</h2>
-        <div class="gallery-note" style="margin:18px 0 22px;">
-          📁 Berisi Pengumuman, Kegiatan, dan info Libur — diambil otomatis dari folder Google Drive. Operator cukup menambah/mengganti file di dalamnya.
+        <p class="desc">Kabar terbaru seputar kegiatan madrasah. Ganti/tambah kartu berita ini langsung di file HTML — lihat tutorial bagian "Mengelola Berita".</p>
+        <div class="grid grid-3" style="margin-top:26px;">
+          <div class="card">
+            <span class="badge">Pengumuman</span>
+            <h3 style="font-size:1.05rem; margin:12px 0 8px;">Pendaftaran Santri Baru Dibuka</h3>
+            <p style="font-size:.9rem; color:#4B5D53;">Pendaftaran tahun ajaran baru telah dibuka. Kuota terbatas per kelas, segera daftarkan putra-putri Anda.</p>
+          </div>
+          <div class="card">
+            <span class="badge">Kegiatan</span>
+            <h3 style="font-size:1.05rem; margin:12px 0 8px;">Khataman Al-Qur'an Angkatan XII</h3>
+            <p style="font-size:.9rem; color:#4B5D53;">Selamat kepada santri angkatan XII yang telah menyelesaikan khataman Al-Qur'an bulan ini.</p>
+          </div>
+          <div class="card">
+            <span class="badge">Libur</span>
+            <h3 style="font-size:1.05rem; margin:12px 0 8px;">Libur Semester Ganjil</h3>
+            <p style="font-size:.9rem; color:#4B5D53;">Kegiatan belajar diliburkan sesuai kalender pendidikan madrasah — jadwal masuk kembali akan diinformasikan.</p>
+          </div>
         </div>
-        <div class="photo-grid" data-drivefolder="folderBerita"></div>
       </article>
     </div>
   </section>
@@ -379,36 +397,61 @@ footer a:hover{color:var(--gold-light);}
       </div>
       <div class="subnav" data-subnav="profil">
         <button data-sub="sejarah">Sejarah Singkat</button>
-        <button data-sub="struktur">Struktur &amp; Tenaga Pendidik</button>
+        <button data-sub="struktur">Struktur &amp; Ustadz/Ustadzah</button>
         <button data-sub="kurikulum">Kurikulum &amp; Program</button>
       </div>
 
       <!-- 2.1 Sejarah -->
       <article class="subpage" data-page="profil" data-sub="sejarah">
         <h2 style="font-size:1.5rem;">Sejarah Singkat</h2>
-        <div class="img-slot tall" data-drivefile="fileSejarah"></div>
+        <div class="timeline" style="margin-top:24px;">
+          <div class="item"><div class="yr">2005</div><p>Madrasah Diniyah Al Falah didirikan atas prakarsa tokoh masyarakat dan takmir masjid setempat, diawali dengan dua kelas mengaji sederhana.</p></div>
+          <div class="item"><div class="yr">2011</div><p>Jumlah santri berkembang pesat, madrasah menambah jenjang Wustho untuk santri usia lanjutan serta menambah tenaga pengajar.</p></div>
+          <div class="item"><div class="yr">2017</div><p>Renovasi ruang belajar dan penambahan program tahfidz Al-Qur'an sebagai unggulan madrasah.</p></div>
+          <div class="item"><div class="yr">2024</div><p>Madrasah mulai merapikan tata kelola administrasi secara digital, termasuk pendaftaran online dan dokumentasi kegiatan.</p></div>
+        </div>
       </article>
 
       <!-- 2.2 Struktur -->
       <article class="subpage" data-page="profil" data-sub="struktur">
-        <h2 style="font-size:1.5rem;">Struktur Organisasi &amp; Tenaga Pendidik</h2>
-
-        <div class="eyebrow" style="margin-top:24px;">Struktur Pengurus</div>
-        <div class="img-slot" data-drivefile="fileStrukturPengurus"></div>
-
-        <div class="eyebrow" style="margin-top:34px;">Ustadz &amp; Ustadzah</div>
-        <div class="gallery-note" style="margin:14px 0 18px;">📁 Diambil otomatis dari folder Google Drive.</div>
-        <div class="photo-grid" data-drivefolder="folderUstadzUstadzah"></div>
-
-        <div class="eyebrow" style="margin-top:34px;">Tenaga Kependidikan (TENDIK)</div>
-        <div class="gallery-note" style="margin:14px 0 18px;">📁 Diambil otomatis dari folder Google Drive.</div>
-        <div class="photo-grid" data-drivefolder="folderTendik"></div>
+        <h2 style="font-size:1.5rem;">Struktur Organisasi &amp; Ustadz/Ustadzah</h2>
+        <div class="card" style="margin:24px 0 32px;">
+          <h3 style="font-size:1rem; margin-bottom:10px;">Struktur Pengurus</h3>
+          <p style="font-size:.92rem; color:#4B5D53;">Kepala Madrasah → Wakil Kepala Bidang Kurikulum → Wakil Kepala Bidang Kesantrian → Tata Usaha &amp; Bendahara → Ustadz/Ustadzah Kelas.</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card teacher-card">
+            <div class="avatar-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
+            <b>Ust. H. Ahmad Fauzi, S.Pd.I.</b>
+            <p style="font-size:.85rem; color:#4B5D53;">Kepala Madrasah</p>
+          </div>
+          <div class="card teacher-card">
+            <div class="avatar-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
+            <b>Ustzh. Siti Maryam, S.Ag.</b>
+            <p style="font-size:.85rem; color:#4B5D53;">Waka Kurikulum / Guru Tahsin</p>
+          </div>
+          <div class="card teacher-card">
+            <div class="avatar-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
+            <b>Ust. Zainal Abidin, S.Pd.</b>
+            <p style="font-size:.85rem; color:#4B5D53;">Guru Fikih &amp; Akhlak</p>
+          </div>
+        </div>
       </article>
 
       <!-- 2.3 Kurikulum -->
       <article class="subpage" data-page="profil" data-sub="kurikulum">
         <h2 style="font-size:1.5rem;">Kurikulum &amp; Program Pembelajaran</h2>
-        <div class="img-slot tall" data-drivefile="fileKurikulum"></div>
+        <table class="tbl" style="margin-top:24px;">
+          <thead><tr><th>Mata Pelajaran</th><th>Jenjang</th><th>Fokus</th></tr></thead>
+          <tbody>
+            <tr><td>Tahsin &amp; Tahfidz Al-Qur'an</td><td>Ula Tahun ke 1 dan 2</td><td>Teori dan Praktek: Bacaan tartil, hafalan surat pilihan</td></tr>
+            <tr><td>Aqidah Akhlak</td><td>Ula Tahun ke 1 dan 2</td><td>Teori dan Praktek: Dasar keimanan &amp; perilaku sehari-hari</td></tr>
+            <tr><td>Fikih Ibadah</td><td>Ula Tahun ke 1 dan 2</td><td>Teori dan Praktek: Tata cara shalat, wudhu, puasa</td></tr>
+            <tr><td>Bahasa Arab</td><td>ULa Tahun ke 3 dan 4</td><td>Teori dan Praktek: Kosakata dasar &amp; membaca teks sederhana</td></tr>
+            <tr><td>Sejarah Kebudayaan Islam</td><td>Ula Tahun ke 3 dan 4</td><td>Teori dan Praktek: Kisah nabi &amp; sejarah Islam</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:18px; font-size:.9rem; color:#4B5D53;">Kurikulum mengacu Permenag No. 13 Tahun 2014 dan Pedoman Penyelenggaraan Madin dari Dirjen Pendis Tahun 2022.</p>
       </article>
     </div>
   </section>
@@ -433,27 +476,28 @@ footer a:hover{color:var(--gold-light);}
       <article class="subpage" data-page="galeri" data-sub="foto">
         <h2 style="font-size:1.5rem;">Galeri Foto Kegiatan</h2>
         <div class="gallery-note" style="margin:20px 0 24px;">
-          📁 Album diambil otomatis dari folder Google Drive madrasah. Operator cukup menambah/mengganti foto di folder tersebut, situs akan menampilkannya otomatis.
+          📁 Album foto diambil otomatis dari folder Google Drive madrasah. Untuk menambah foto, cukup unggah gambar baru ke folder Drive tersebut — album di bawah akan menampilkannya secara otomatis. Lihat tutorial "Mengatur Folder Google Drive untuk Galeri".
         </div>
-        <div class="photo-grid" data-drivefolder="folderGaleriFoto"></div>
+        <iframe class="gallery-frame" id="driveFolderFoto" src="" loading="lazy" title="Folder foto kegiatan Google Drive"></iframe>
       </article>
 
       <!-- 3.2 Video -->
       <article class="subpage" data-page="galeri" data-sub="video">
         <h2 style="font-size:1.5rem;">Galeri Video</h2>
         <div class="gallery-note" style="margin:20px 0 24px;">
-          🎬 Video diambil otomatis dari folder Google Drive. Operator cukup mengunggah file video baru ke folder tersebut — klik salah satu video di bawah untuk memutarnya.
+          🎬 Video kegiatan disimpan di folder Google Drive terpisah agar tidak membebani ukuran situs. Tambahkan video baru langsung ke folder Drive video.
         </div>
-        <div class="photo-grid" data-drivefolder="folderGaleriVideo" data-drivevideo="true"></div>
+        <iframe class="gallery-frame" id="driveFolderVideo" src="" loading="lazy" title="Folder video kegiatan Google Drive"></iframe>
       </article>
 
       <!-- 3.3 Prestasi -->
       <article class="subpage" data-page="galeri" data-sub="prestasi">
         <h2 style="font-size:1.5rem;">Prestasi Santri</h2>
-        <div class="gallery-note" style="margin:20px 0 24px;">
-          🏆 Diambil otomatis dari folder Google Drive. Operator cukup menambah/mengganti foto piagam atau prestasi di folder tersebut.
+        <div class="grid grid-3" style="margin-top:24px;">
+          <div class="card"><span class="badge">Juara 1</span><h3 style="font-size:1rem; margin:12px 0 6px;">MTQ Tingkat Kecamatan</h3><p style="font-size:.88rem; color:#4B5D53;">Cabang tilawah anak-anak, diraih oleh santri jenjang Ula.</p></div>
+          <div class="card"><span class="badge">Juara 2</span><h3 style="font-size:1rem; margin:12px 0 6px;">Lomba Hafalan Surat Pendek</h3><p style="font-size:.88rem; color:#4B5D53;">Tingkat kota, diikuti oleh perwakilan santri Wustho.</p></div>
+          <div class="card"><span class="badge">Apresiasi</span><h3 style="font-size:1rem; margin:12px 0 6px;">Khatam Al-Qur'an Termuda</h3><p style="font-size:.88rem; color:#4B5D53;">Penghargaan internal untuk santri termuda yang menuntaskan khataman.</p></div>
         </div>
-        <div class="photo-grid" data-drivefolder="folderPrestasi"></div>
       </article>
     </div>
   </section>
@@ -477,10 +521,25 @@ footer a:hover{color:var(--gold-light);}
       <!-- 4.1 Syarat -->
       <article class="subpage" data-page="pendaftaran" data-sub="syarat">
         <h2 style="font-size:1.5rem;">Syarat &amp; Cara Daftar</h2>
-        <div class="gallery-note" style="margin:20px 0 24px;">
-          📁 Diambil otomatis dari folder Google Drive. Operator cukup menambah/mengganti gambar syarat dan cara pendaftaran di folder tersebut.
+        <div class="grid grid-2" style="margin-top:24px;">
+          <div class="card">
+            <h3 style="font-size:1rem; margin-bottom:14px;">Syarat Pendaftaran</h3>
+            <ul style="display:flex; flex-direction:column; gap:10px; font-size:.9rem;">
+              <li>✅ Usia minimal 6 tahun (jenjang Ula) atau 10 tahun (jenjang Wustho).</li>
+              <li>✅ Mengisi formulir pendaftaran online.</li>
+              <li>✅ Fotokopi Kartu Keluarga &amp; Akta Kelahiran.</li>
+              <li>✅ Pas foto santri terbaru.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3 style="font-size:1rem; margin-bottom:14px;">Cara Mendaftar</h3>
+            <div class="step-list">
+              <div class="step"><div class="num">1</div><div class="txt"><b>Isi Formulir Online</b><span>Buka tab "Formulir Online" dan lengkapi data santri.</span></div></div>
+              <div class="step"><div class="num">2</div><div class="txt"><b>Unggah Dokumen</b><span>Sertakan dokumen pendukung melalui tautan unggah di formulir.</span></div></div>
+              <div class="step"><div class="num">3</div><div class="txt"><b>Konfirmasi via WhatsApp</b><span>Tim kami akan menghubungi untuk verifikasi dan info kelas.</span></div></div>
+            </div>
+          </div>
         </div>
-        <div class="photo-grid" data-drivefolder="folderSyaratDaftar"></div>
       </article>
 
       <!-- 4.2 Formulir -->
@@ -501,14 +560,14 @@ footer a:hover{color:var(--gold-light);}
         <table class="tbl" style="margin-top:24px;">
           <thead><tr><th>Komponen</th><th>Nominal</th><th>Keterangan</th></tr></thead>
           <tbody>
-            <tr><td>Biaya Pendaftaran</td><td>Rp 100.000</td><td>Dibayar sekali saat pendaftaran</td></tr>
-            <tr><td>SPP Bulanan</td><td>Rp 50.000</td><td>Dibayar tiap awal bulan</td></tr>
-            <tr><td>Seragam &amp; Buku</td><td>Rp 150.000</td><td>Opsional, dapat diangsur</td></tr>
+            <tr><td>Biaya Pendaftaran</td><td>Kontak Petugas</td><td>Dibayar sekali saat pendaftaran</td></tr>
+            <tr><td>SPP Bulanan</td><td>Kontak Petugas</td><td>Dibayar tiap awal bulan</td></tr>
+            <tr><td>Seragam &amp; Buku</td><td>Kontak Petugas</td><td>Opsional, dapat diangsur</td></tr>
           </tbody>
         </table>
         <div class="card" style="margin-top:24px;">
-          <h3 style="font-size:1rem; margin-bottom:10px;">Jadwal Kegiatan Belajar</h3>
-          <p style="font-size:.9rem; color:#4B5D53;">Senin–Jumat, pukul 15.30–17.30 WIB. Penerimaan santri baru dibuka sepanjang tahun, mengikuti ketersediaan kuota kelas.</p>
+          <h3 style="font-size:1rem; margin-bottom:10px;">Pendaftaran dapat dilakukan secara online (isi formulir online) maupun offline (datang di alamat Madin Alfalah)</h3>
+          <p style="font-size:.9rem; color:#4B5D53;">Penerimaan santri baru dibuka sepanjang tahun, mengikuti ketersediaan kuota kelas.</p>
         </div>
       </article>
     </div>
@@ -533,8 +592,13 @@ footer a:hover{color:var(--gold-light);}
       <!-- 5.1 Lokasi -->
       <article class="subpage" data-page="kontak" data-sub="lokasi">
         <h2 style="font-size:1.5rem;">Alamat &amp; Peta Lokasi</h2>
-        <p class="desc" style="margin-top:10px;">Gambar di bawah bisa berupa tangkapan layar (screenshot) Google Maps yang sudah ditandai lokasi madrasah, lengkap dengan teks alamat. Ganti link-nya di <b>KONTEN.alamatPeta</b>.</p>
-        <div class="img-slot tall" data-imgslot="alamatPeta"></div>
+        <div class="grid grid-2" style="margin-top:24px; align-items:start;">
+          <div class="card">
+            <p style="font-size:.95rem;">Jl. Masjid Al Falah No. 12,<br>Kota Malang, Jawa Timur 65100</p>
+            <p style="margin-top:14px; font-size:.85rem; color:#4B5D53;">Ganti alamat ini sesuai lokasi madrasah pada bagian KONFIGURASI di kode situs.</p>
+          </div>
+          <iframe class="map-frame" id="mapsEmbed" src="" loading="lazy" title="Peta lokasi madrasah"></iframe>
+        </div>
       </article>
 
       <!-- 5.2 Kontak person -->
@@ -581,7 +645,7 @@ footer a:hover{color:var(--gold-light);}
   <div class="container foot-grid">
     <div>
       <h4>Madrasah Diniyah Al Falah</h4>
-      <p style="font-size:.9rem; max-width:320px; opacity:.85;">Membina generasi Qur'ani, berakidah lurus, dan berakhlak mulia di Kota Malang sejak 2005.</p>
+      <p style="font-size:.9rem; max-width:320px; opacity:.85;">Membina generasi Qur'ani, berakidah lurus, dan berakhlak mulia di Kota Malang sejak 2017.</p>
     </div>
     <div>
       <h4>Tautan Cepat</h4>
@@ -592,7 +656,7 @@ footer a:hover{color:var(--gold-light);}
     </div>
     <div>
       <h4>Kontak Singkat</h4>
-      <a id="footAddr">Jl. Masjid Al Falah No. 12, Kota Malang</a>
+      <a id="footAddr">Jl. Kendalisodo No. 25, Kota Malang</a>
       <a id="footWA" href="#" target="_blank" rel="noopener">WhatsApp Tata Usaha</a>
     </div>
   </div>
@@ -606,13 +670,24 @@ footer a:hover{color:var(--gold-light);}
    ============================================================ */
 const KONFIGURASI = {
   // ---- Kontak ----
-  alamat: "Jl. Masjid Al Falah No. 12, Kota Malang, Jawa Timur 65100",
-  whatsappTU: "6281234567890",          // ganti dengan nomor WA Tata Usaha (format 62xxxxxxxxxx)
-  email: "info@alfalahmalang.sch.id",   // ganti dengan email madrasah
+  alamat: "Jl. Kendalisodo No. 25, Kota Malang, Jawa Timur 65100",
+  whatsappTU: "628113666460",          // ganti dengan nomor WA Tata Usaha (format 62xxxxxxxxxx)
+  email: "madinalfalah026@gmail.com",   // ganti dengan email madrasah
+
+  // ---- Google Maps ----
+  // Cara ambil: buka Google Maps -> cari lokasi -> Bagikan -> Sematkan peta -> salin isi src="..."
+  googleMapsEmbedSrc: "https://www.google.com/maps?q=Kota+Malang&output=embed",
+
+  // ---- Google Drive: Galeri Foto & Video ----
+  // Cara ambil ID folder: buka folder di Google Drive -> klik kanan -> Bagikan -> Salin tautan
+  // Tautan biasanya: https://drive.google.com/drive/folders/ID_FOLDER_DI_SINI
+  driveFolderFotoId: "GANTI_DENGAN_ID_FOLDER_FOTO",
+  driveFolderVideoId: "GANTI_DENGAN_ID_FOLDER_VIDEO",
 
   // ---- Google Form: Pendaftaran ----
-  googleFormEmbedSrc: "https://docs.google.com/forms/d/e/1FAIpQLSefFK720WBdQ-i1P7bUmJFyu3Ueaqs1TtIBMVMS-xIouO8v6w/viewform?embedded=true",
-  googleFormViewUrl: "https://docs.google.com/forms/d/e/1FAIpQLSefFK720WBdQ-i1P7bUmJFyu3Ueaqs1TtIBMVMS-xIouO8v6w/viewform",
+  // Cara ambil: buka Google Form -> Kirim -> ikon <> (Sematkan HTML) -> salin URL di dalam src="..."
+  googleFormEmbedSrc: "https://docs.google.com/forms/d/e/1FAIpQLSefFK720WBdQ-i1P7bUmJFyu3Ueaqs1TtIBMVMS-xIouO8v6w/viewform?usp=sharing&ouid=112565987319857083453",
+  googleFormViewUrl: "https://docs.google.com/forms/d/e/1FAIpQLSefFK720WBdQ-i1P7bUmJFyu3Ueaqs1TtIBMVMS-xIouO8v6w/viewform?",
 
   // ---- Media Sosial ----
   instagram: "https://instagram.com/alfalahmalang",
@@ -621,55 +696,11 @@ const KONFIGURASI = {
 };
 
 /* ============================================================
-   DRIVE — SATU-SATUNYA BAGIAN YANG (SEHARUSNYA) TIDAK PERNAH
-   DIUBAH LAGI. Isinya cuma ID folder/file Google Drive.
-
-   OPERATOR TIDAK PERLU BUKA BAGIAN INI SAMA SEKALI.
-   Cukup buka folder Drive terkait, lalu tambah/hapus/ganti file
-   di dalamnya. Situs otomatis menampilkan isi folder terbaru.
-
-   - folderXxx  = ID folder Drive (isi boleh banyak file, situs
-                  menampilkan galeri/daftar isi folder tsb)
-   - fileXxx    = ID satu file Drive (untuk mengganti gambarnya,
-                  gunakan "Kelola versi" / "Manage versions" di
-                  Drive pada file yang sama — ID tidak berubah)
-   ============================================================ */
-const DRIVE = {
-  // --- Kunci API Google Drive (wajib diisi, lihat TUTORIAL Bagian 6) ---
-  apiKey: "GANTI_DENGAN_API_KEY_ANDA",
-
-  // --- Folder (operator cukup ubah isi folder di Drive) ---
-  folderSambutan:        "1vTqL2UrXmCOyioPbCLaU6m8FxE7DUxr4", // Sambutan Kepala Madrasah & Sekilas Madrasah
-  folderVisiMisiTujuan:  "1Ne7hSsQXBdNEMKT_VYJgAQoE2jrvCgzA", // Visi, Misi & Tujuan
-  folderBerita:          "1EhDBj9p1hkAtXHMCOpXIhZ16Y72svP9z", // Berita & Pengumuman (Pengumuman/Kegiatan/Libur)
-  folderUstadzUstadzah:  "1B2n_qSAEvGE1ciokNHeYzFSsN6gKE7Iu", // Ustadz & Ustadzah
-  folderTendik:          "1Qck3l08G6GMcpNWQCzHx6ScTokLV4XMP", // Tenaga Kependidikan (TENDIK)
-  folderGaleriFoto:      "14lkudqFKALm6FHzrd4HCMv__OOU2C4ch", // Galeri Foto Kegiatan
-  folderGaleriVideo:     "1QdBZ5bYM5jtWxJqfACP9RUQ4uzg2586U", // Galeri Video
-  folderPrestasi:        "1gqQhS7veSFliYGD31uRc-auPoJxPzcdc", // Prestasi Santri
-  folderSyaratDaftar:    "1Tq6XjbZogKEleT1R7CKCQmbw3spT4Z-S", // Syarat & Cara Daftar
-
-  // --- File tunggal (ganti isi filenya lewat "Kelola versi" di Drive) ---
-  fileSejarah:            "1SrnOJH81Dp8GlRU9EElmH5AEgdnymUNn", // Sejarah Singkat
-  fileStrukturPengurus:   "1xbcW9oqElLkcWwDpFZCQisNaFEA3xwk2", // Struktur Pengurus
-  fileKurikulum:          "1EVmEr44CMjJRGOPAVLBAJ5hGMabS2G2E"  // Kurikulum & Program Pembelajaran
-};
-
-/* ============================================================
-   KONTEN TAMBAHAN — belum ada folder Drive-nya dari daftar yang
-   dikirim, jadi sementara masih pakai link JPG manual. Isi bila
-   perlu, atau kirim link folder Drive-nya untuk disematkan juga.
-   ============================================================ */
-const KONTEN = {
-  alamatPeta: "",   // Alamat & Peta Lokasi (screenshot Google Maps + alamat, JPG)
-};
-
-/* ============================================================
    STRUKTUR NAVIGASI
    ============================================================ */
 const NAVDATA = {
   beranda: {label:"BERANDA", subs:{sambutan:"Sambutan Kepala Madrasah", visimisi:"Visi, Misi & Tujuan", berita:"Berita & Pengumuman"}},
-  profil: {label:"PROFIL", subs:{sejarah:"Sejarah Singkat", struktur:"Struktur & Tenaga Pendidik", kurikulum:"Kurikulum & Program"}},
+  profil: {label:"PROFIL", subs:{sejarah:"Sejarah Singkat", struktur:"Struktur & Ustadz/Ustadzah", kurikulum:"Kurikulum & Program"}},
   galeri: {label:"GALERI", subs:{foto:"Galeri Foto", video:"Galeri Video", prestasi:"Prestasi Santri"}},
   pendaftaran: {label:"PENDAFTARAN", subs:{syarat:"Syarat & Cara Daftar", formulir:"Formulir Online", biaya:"Biaya & Jadwal"}},
   kontak: {label:"KONTAK", subs:{lokasi:"Alamat & Lokasi", person:"Kontak Person", sosial:"Media Sosial"}}
@@ -728,7 +759,7 @@ function gotoPage(page, sub){
   // tombol subnav aktif
   const nav=document.querySelector('.subnav[data-subnav="'+page+'"]');
   if(nav){ nav.querySelectorAll('button').forEach(b=>b.classList.toggle('active', b.dataset.sub===sub)); }
-  // muat iframe formulir hanya saat dibutuhkan (lazy)
+  // muat iframe hanya saat dibutuhkan (lazy)
   loadEmbeds(page, sub);
   history.replaceState(null,'','#'+page+'-'+sub);
   window.scrollTo({top: page==='beranda' && sub==='sambutan' ? 0 : document.querySelector('header').offsetHeight, behavior:'smooth'});
@@ -736,101 +767,23 @@ function gotoPage(page, sub){
 }
 
 function loadEmbeds(page, sub){
-  // muat isi folder Drive (via Google Drive API) hanya saat subpage-nya sedang tampil
-  document.querySelectorAll('.subpage[data-page="'+page+'"][data-sub="'+sub+'"] [data-drivefolder]').forEach(el=>{
-    if(!el.dataset.loaded){ renderDriveFolder(el); }
-  });
+  if(page==='galeri' && sub==='foto'){
+    const el=document.getElementById('driveFolderFoto');
+    if(!el.src || el.src==='about:blank') el.src = "https://drive.google.com/embeddedfolderview?id="+KONFIGURASI.driveFolderFotoId+"#grid";
+  }
+  if(page==='galeri' && sub==='video'){
+    const el=document.getElementById('driveFolderVideo');
+    if(!el.src || el.src==='about:blank') el.src = "https://drive.google.com/embeddedfolderview?id="+KONFIGURASI.driveFolderVideoId+"#grid";
+  }
   if(page==='pendaftaran' && sub==='formulir'){
     const el=document.getElementById('googleFormEmbed');
     if(!el.src || el.src==='about:blank') el.src = KONFIGURASI.googleFormEmbedSrc;
     document.getElementById('googleFormFallback').href = KONFIGURASI.googleFormViewUrl;
   }
-}
-
-/* ============================================================
-   RENDER — DRIVE (folder via Google Drive API, & file tunggal)
-   ============================================================ */
-function driveFileSrc(id){ return "https://lh3.googleusercontent.com/d/"+id; }
-
-function drivePlaceholder(msg){
-  return '<div class="img-placeholder"><b>🖼️ Gambar belum tersedia</b>'+(msg||'Pastikan ID file/folder Drive sudah benar, dan sudah dibagikan sebagai "Siapa saja yang memiliki link".')+'</div>';
-}
-
-async function renderDriveFolder(el){
-  const folderKey = el.dataset.drivefolder;
-  const folderId = DRIVE[folderKey];
-  const isVideo = el.dataset.drivevideo === 'true';
-  el.dataset.loaded = '1';
-
-  if(!folderId){
-    el.innerHTML = drivePlaceholder('ID folder belum diisi pada bagian DRIVE di kode.');
-    return;
+  if(page==='kontak' && sub==='lokasi'){
+    const el=document.getElementById('mapsEmbed');
+    if(!el.src || el.src==='about:blank') el.src = KONFIGURASI.googleMapsEmbedSrc;
   }
-  if(!DRIVE.apiKey || DRIVE.apiKey.startsWith('GANTI_')){
-    el.innerHTML = drivePlaceholder('API Key Google Drive belum diisi. Lihat TUTORIAL Bagian 6 untuk cara membuatnya.');
-    return;
-  }
-
-  el.innerHTML = '<div class="gallery-loading"><span class="spinner"></span> Memuat galeri…</div>';
-
-  try{
-    const q = encodeURIComponent("'"+folderId+"' in parents and trashed=false");
-    const fields = encodeURIComponent("files(id,name,mimeType,thumbnailLink)");
-    const url = "https://www.googleapis.com/drive/v3/files?q="+q+"&fields="+fields+"&pageSize=100&orderBy=name&key="+DRIVE.apiKey;
-    const res = await fetch(url);
-    const data = await res.json();
-
-    if(data.error){
-      el.innerHTML = drivePlaceholder('Google Drive menolak permintaan ("'+data.error.message+'"). Pastikan API Key benar & folder dibagikan sebagai "Siapa saja yang memiliki link".');
-      return;
-    }
-    const files = (data.files || []).filter(f => f.mimeType.startsWith('image/') || f.mimeType.startsWith('video/'));
-    if(files.length === 0){
-      el.innerHTML = drivePlaceholder('Folder ini masih kosong. Tambahkan foto/video di dalam folder Google Drive-nya.');
-      return;
-    }
-    el.innerHTML = files.map(f=>{
-      const thumb = f.thumbnailLink ? f.thumbnailLink.replace(/=s\d+$/, '=s800') : driveFileSrc(f.id);
-      const img = '<img src="'+thumb+'" alt="'+(f.name||'').replace(/"/g,'')+'" loading="lazy">';
-      if(isVideo || f.mimeType.startsWith('video/')){
-        return '<a class="thumb-card video-thumb" href="https://drive.google.com/file/d/'+f.id+'/view" target="_blank" rel="noopener">'+img+'</a>';
-      }
-      return '<a class="thumb-card" href="https://drive.google.com/file/d/'+f.id+'/view" target="_blank" rel="noopener">'+img+'</a>';
-    }).join('');
-  }catch(err){
-    el.innerHTML = drivePlaceholder('Gagal memuat folder (koneksi internet atau API Key bermasalah).');
-  }
-}
-
-function renderDriveFiles(){
-  document.querySelectorAll('[data-drivefile]').forEach(slot=>{
-    const id = DRIVE[slot.dataset.drivefile];
-    if(id){
-      slot.innerHTML = '<img class="content-img" src="'+driveFileSrc(id)+'" alt="" loading="lazy" onerror="this.parentElement.innerHTML=drivePlaceholder()">';
-    }else{
-      slot.innerHTML = drivePlaceholder();
-    }
-  });
-}
-
-function isLinkValid(url){
-  return !!url && !url.startsWith('GANTI_') && url.trim() !== '';
-}
-
-function renderImgSlots(){
-  document.querySelectorAll('[data-imgslot]').forEach(slot=>{
-    const url = KONTEN[slot.dataset.imgslot];
-    if(isLinkValid(url)){
-      slot.innerHTML = '<img class="content-img" src="'+url+'" alt="" loading="lazy" onerror="this.parentElement.innerHTML=drivePlaceholder(\'Isi link JPG pada bagian KONTEN di kode.\')">';
-    }else{
-      slot.innerHTML = drivePlaceholder('Isi link JPG pada bagian <code>KONTEN</code> di kode.');
-    }
-  });
-}
-
-function renderKonten(){
-  renderDriveFiles();
-  renderImgSlots();
 }
 
 function applyKonfigurasi(){
@@ -867,7 +820,6 @@ function drawStar(id){
 buildNav();
 buildSubnavs();
 applyKonfigurasi();
-renderKonten();
 ['star8','star8b','star8c'].forEach(drawStar);
 
 const startHash = location.hash.replace('#','').split('-');
@@ -879,3 +831,4 @@ if(startHash.length===2 && NAVDATA[startHash[0]] && NAVDATA[startHash[0]].subs[s
 </script>
 </body>
 </html>
+*/
