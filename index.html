@@ -465,32 +465,51 @@ footer a:hover{color:var(--gold-light);}
         <div class="eyebrow">Galeri</div>
         <h2>Dokumentasi Kegiatan Madrasah</h2>
         <p class="desc">Foto dan video ini diambil langsung dari folder Google Drive madrasah, sehingga pengurus dapat memperbarui isinya tanpa mengubah kode situs.</p>
-      </div>
+    </div>
       <div class="subnav" data-subnav="galeri">
         <button data-sub="foto">Galeri Foto</button>
         <button data-sub="video">Galeri Video</button>
         <button data-sub="prestasi">Prestasi Santri</button>
       </div>
 
-      <!-- 3.1 Foto -->
+                    <!-- 3.1 Foto -->
       <article class="subpage" data-page="galeri" data-sub="foto">
         <h2 style="font-size:1.5rem;">Galeri Foto Kegiatan</h2>
         <div class="gallery-note" style="margin:20px 0 24px;">
-          📁 Album foto diambil otomatis dari folder Google Drive madrasah. Untuk menambah foto, cukup unggah gambar baru ke folder Drive tersebut — album di bawah akan menampilkannya secara otomatis. Lihat tutorial "Mengatur Folder Google Drive untuk Galeri".
+          📁 Album foto diambil otomatis dari folder Google Drive madrasah. Untuk menambah foto, cukup unggah gambar baru ke folder Drive tersebut — album di bawah akan menampilkannya secara otomatis.
         </div>
-        <iframe class="gallery-frame" id="driveFolderFoto" src="" loading="lazy" title="Folder foto kegiatan Google Drive"></iframe>
+        <div class="gallery-frame" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+          <!-- Foto satu per satu -->
+          <iframe src="https://drive.google.com/file/d/1l6raD3nEJhtObXhbk4GJQ7jbCHWXmajR/preview"
+                  style="width:300px; height:200px; border:none;" loading="lazy"></iframe>
+          <iframe src="https://drive.google.com/file/d/1fG2gtz4KmqojISpSSmcPkIP34_IRw2Pm/preview"
+                  style="width:300px; height:200px; border:none;" loading="lazy"></iframe>
+           <iframe src="https://drive.google.com/file/d/1l6raD3nEJhtObXhbk4GJQ7jbCHWXmajR/preview"
+                  style="width:300px; height:200px; border:none;" loading="lazy"></iframe>
+           <iframe src="https://drive.google.com/file/d/1l6raD3nEJhtObXhbk4GJQ7jbCHWXmajR/preview"
+                  style="width:300px; height:200px; border:none;" loading="lazy"></iframe>
+          <iframe src="https://drive.google.com/file/d/1fG2gtz4KmqojISpSSmcPkIP34_IRw2Pm/preview"
+                  style="width:300px; height:200px; border:none;" loading="lazy"></iframe>
+           <iframe src="https://drive.google.com/file/d/1l6raD3nEJhtObXhbk4GJQ7jbCHWXmajR/preview"
+                  style="width:300px; height:200px; border:none;" loading="lazy"></iframe>
+        </div>
+      
       </article>
 
       <!-- 3.2 Video -->
       <article class="subpage" data-page="galeri" data-sub="video">
         <h2 style="font-size:1.5rem;">Galeri Video</h2>
         <div class="gallery-note" style="margin:20px 0 24px;">
-          🎬 Video kegiatan disimpan di folder Google Drive terpisah agar tidak membebani ukuran situs. Tambahkan video baru langsung ke folder Drive video.
+         🎬 Video kegiatan disimpan di folder Google Drive terpisah agar tidak membebani ukuran situs.
         </div>
-        <iframe class="gallery-frame" id="driveFolderVideo" src="" loading="lazy" title="Folder video kegiatan Google Drive"></iframe>
+        <div class="gallery-frame" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+          <!-- Video satu per satu -->
+          <iframe src="https://drive.google.com/file/d/1i_EbjKjUX7zjvfhcehcKBsUTZS3CUKnh/preview"
+                  style="width:400px; height:300px; border:none;" loading="lazy"></iframe>
+        </div>
       </article>
-
-      <!-- 3.3 Prestasi -->
+       
+<!-- 3.3 Prestasi -->
       <article class="subpage" data-page="galeri" data-sub="prestasi">
         <h2 style="font-size:1.5rem;">Prestasi Santri</h2>
         <div class="grid grid-3" style="margin-top:24px;">
@@ -501,7 +520,7 @@ footer a:hover{color:var(--gold-light);}
       </article>
     </div>
   </section>
-
+   
   <!-- ============================================================
        4. PENDAFTARAN
   ============================================================ -->
