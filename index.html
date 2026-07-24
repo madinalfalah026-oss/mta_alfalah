@@ -3,91 +3,80 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Presensi & Kegiatan Belajar - MDTU Al Fallah</title>
+<title>Aplikasi Presensi MDTU Al Fallah</title>
 <style>
-  /* --- CSS asli tetap --- */
-  :root{
-    --hijau:#0f6b4c; --hijau-tua:#0a4d37; --emas:#c99a3c;
-    --bg:#f5f6f4; --card:#ffffff; --text:#22302b; --muted:#6b7a73; --border:#e1e5e2;
-    --hadir:#1f9d55; --sakit:#e8a63c; --ijin:#3b82c4; --alpha:#d4453e; --terlambat:#8a5cd4;
-  }
-  /* ... semua CSS Anda tetap ... */
+  body { font-family: Arial, sans-serif; background:#f5f6f4; margin:0; padding:20px; }
+  h1 { color:#0f6b4c; }
+  table { border-collapse: collapse; width:100%; margin-top:20px; }
+  th, td { border:1px solid #ccc; padding:8px; text-align:left; }
+  th { background:#0f6b4c; color:#fff; }
+  .status-HADIR { background:#d4edda; }
+  .status-SAKIT { background:#ffeeba; }
+  .status-IJIN { background:#bee5eb; }
+  .status-ALPA { background:#f5c6cb; }
+  .status-TERLAMBAT { background:#e2d6f5; }
 </style>
 </head>
 <body>
+<h1>Presensi MDTU Al Fallah</h1>
+<p>Data diambil dari Google Sheet (CSV).</p>
 
-<!-- Semua struktur HTML asli Anda tetap -->
-<div id="landingView" class="landing">
-  <div class="card">
-    <h2>Presensi & Kegiatan Belajar</h2>
-    <p class="muted">Madrasah Diniyah Takmiliyah Ula (MDTU) Al Fallah</p>
-    <button class="btn" id="btnMasukSantri" style="width:100%;margin-top:14px;">Isi Presensi Saya (Santri)</button>
-  </div>
-  <div class="card">
-    <h2>Login Petugas</h2>
-    <label>Password</label>
-    <input type="password" id="pwLanding" placeholder="Masukkan password sesuai peran Anda">
-    <div class="row" style="margin-top:12px;">
-      <button class="btn secondary" id="btnLoginUstadz">Ustadz / Sekretaris</button>
-      <button class="btn secondary" id="btnLoginWali">Wali Klas / Kepala</button>
-    </div>
-    <button class="btn secondary" id="btnLoginAdmin" style="width:100%;margin-top:10px;">Admin</button>
-  </div>
-</div>
-
-<div id="appView" class="hidden">
-  <!-- ... semua konten asli Anda tetap ... -->
-</div>
-
-<div id="toast" class="toast hidden"></div>
+<table id="presensiTable">
+  <thead>
+    <tr>
+      <th>Klas</th>
+      <th>Nama Siswa</th>
+      <th>Nama Guru</th>
+      <th>Mata Pelajaran</th>
+      <th>Status Kehadiran</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
 
 <script>
-const STATUS_LIST = ['HADIR','SAKIT','IJIN','ALPHA','TERLAMBAT'];
-const STATUS_SINGKAT = {HADIR:'H',SAKIT:'S',IJIN:'I',ALPHA:'A',TERLAMBAT:'T'};
-let MASTER = null;
-let SESI_AKTIF = null;
-let RIWAYAT = [];
-let ROLE = null;
-
-/* --- Fungsi tambahan untuk load data dari Google Sheet --- */
-async function loadMasterFromSheet() {
-  const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKOUuFwFy7AsVTj6UguCRxv1wmc4tVuIvpOQSRIGvgdzqrZWOqZjgDh9NtYXoM8g/pub?output=csv
-";
+async function loadPresensiFromSheet() {
+  const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKOUuFwFy7AsVTj6UguCRxv1wmc4tVuIvpOQSRIGvgdzqrZWOqZjgDh9NtYXoM8g/pub?output=csv";
   const response = await fetch(sheetUrl);
   const text = await response.text();
   const rows = text.split("\n").map(r => r.split(","));
+  console.log(rows); // cek isi CSV di console
 
-  let klas = [], santri = [];
+  let presensi = [];
   rows.forEach((row, i) => {
     if (i === 0) return; // skip header
-    const klasId = "KLAS" + row[0];
-    if (!klas.find(k => k.id === klasId)) {
-      klas.push({id: klasId, nama: "Klas " + row[0]});
-    }
-    santri.push({id: "ST" + i, klasId: klasId, nama: row[1], foto: ""});
+    presensi.push({
+      klas: row[0],
+      siswa: row[1],
+      guru: row[2],
+      matpel: row[3],
+      status: row[4]
+    });
   });
-
-  return {
-    config: { namaMadrasah: "MDTU Al Fallah", passwordAdmin:'admin123', passwordUstadz:'ustadz123', passwordWali:'wali123',
-              sessionDurationMinutes:120, formula:{harian:30,uts:30,uas:40} },
-    klas: klas,
-    mapel: [],
-    guru: [],
-    santri: santri,
-    buku: []
-  };
+  return presensi;
 }
 
-/* --- Ganti loadAll agar ambil dari sheet --- */
-async function loadAll(){
-  MASTER = await loadMasterFromSheet();
-  SESI_AKTIF = null;
-  RIWAYAT = [];
-  render();
+async function renderPresensi() {
+  const data = await loadPresensiFromSheet();
+  const tbody = document.querySelector("#presensiTable tbody");
+  tbody.innerHTML = "";
+  data.forEach(item => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${item.klas}</td>
+      <td>${item.siswa}</td>
+      <td>${item.guru}</td>
+      <td>${item.matpel}</td>
+      <td class="status-${item.status}">${item.status}</td>
+    `;
+    tbody.appendChild(tr);
+  });
 }
 
-/* --- Semua fungsi asli Anda tetap: toast, uid, enterApp, render, dll --- */
-/* ... paste seluruh script asli Anda di sini tanpa diubah ... */
+renderPresensi();
+</script>
+</body>
+</html>
 
 loadAll();
 </script>
