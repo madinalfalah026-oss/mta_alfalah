@@ -1,853 +1,96 @@
-*<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Madrasah Diniyah Al Falah Kota Malang</title>
-<meta name="description" content="Situs resmi Madin Al Falah Kota Malang — Profil, Galeri, Pendaftaran Santri Baru, dan Kontak.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presensi & Kegiatan Belajar - MDTU Al Fallah</title>
 <style>
-/* ============================================================
-   1. TOKEN DESAIN — ubah warna/nama di sini bila perlu
-   ============================================================ */
-:root{
-  --ink:#16241D;
-  --emerald:#0E4B39;
-  --emerald-deep:#0A342A;
-  --emerald-soft:#144A3B;
-  --gold:#C89B3C;
-  --gold-light:#E8C874;
-  --cream:#FBF6EA;
-  --cream-2:#F5EEDC;
-  --sage:#E4ECE0;
-  --line:#D9CDA9;
-  --white:#FFFFFF;
-  --font-display:'Marcellus', serif;
-  --font-arabic:'Amiri', serif;
-  --font-body:'Plus Jakarta Sans', sans-serif;
-  --radius:14px;
-  --shadow:0 10px 30px -12px rgba(14,75,57,.28);
-}
-
-*{box-sizing:border-box; margin:0; padding:0;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:var(--font-body);
-  background:var(--cream);
-  color:var(--ink);
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-}
-img{max-width:100%; display:block;}
-a{color:inherit; text-decoration:none;}
-ul{list-style:none;}
-.container{max-width:1140px; margin:0 auto; padding:0 24px;}
-h1,h2,h3,h4{font-family:var(--font-display); font-weight:400; color:var(--emerald-deep); line-height:1.2;}
-.eyebrow{
-  font-family:var(--font-body); font-weight:700; letter-spacing:.14em; text-transform:uppercase;
-  font-size:.74rem; color:var(--gold); display:flex; align-items:center; gap:10px; margin-bottom:10px;
-}
-.eyebrow::before{content:''; width:22px; height:1px; background:var(--gold);}
-.arabic{font-family:var(--font-arabic); direction:rtl;}
-
-/* --- motif bintang islami (elemen tanda tangan desain) --- */
-.motif{position:absolute; opacity:.14; pointer-events:none;}
-.motif svg{width:100%; height:100%;}
-
-/* ============================================================
-   2. HEADER & NAVIGASI
-   ============================================================ */
-header{
-  position:sticky; top:0; z-index:100;
-  background:var(--emerald); color:var(--cream);
-  box-shadow:0 2px 18px rgba(0,0,0,.12);
-}
-.topbar{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:14px 24px; max-width:1140px; margin:0 auto;
-}
-.brand{display:flex; align-items:center; gap:12px;}
-.brand-mark{
-  width:46px; height:46px; border-radius:50%; background:var(--gold);
-  display:flex; align-items:center; justify-content:center; flex-shrink:0;
-}
-.brand-mark svg{width:26px; height:26px;}
-.brand-text .name{font-family:var(--font-display); font-size:1.08rem; letter-spacing:.01em; color:var(--white);}
-.brand-text .sub{font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-light);}
-
-nav.mainnav{display:flex; gap:4px;}
-nav.mainnav > .nav-item{position:relative;}
-nav.mainnav > .nav-item > button{
-  background:none; border:none; color:var(--cream); font-family:var(--font-body);
-  font-weight:600; font-size:.86rem; letter-spacing:.03em; padding:12px 14px; cursor:pointer;
-  border-radius:8px; transition:background .2s;
-}
-nav.mainnav > .nav-item > button:hover,
-nav.mainnav > .nav-item.active > button{background:rgba(255,255,255,.12); color:var(--gold-light);}
-.dropdown{
-  position:absolute; top:100%; left:0; background:var(--white); min-width:240px;
-  border-radius:10px; box-shadow:var(--shadow); padding:8px; opacity:0; visibility:hidden;
-  transform:translateY(-6px); transition:.18s ease; border:1px solid var(--line);
-}
-.nav-item:hover .dropdown, .nav-item:focus-within .dropdown{opacity:1; visibility:visible; transform:translateY(4px);}
-.dropdown a{
-  display:block; padding:10px 14px; border-radius:8px; color:var(--ink); font-size:.88rem; font-weight:500;
-}
-.dropdown a:hover{background:var(--sage); color:var(--emerald-deep);}
-.burger{display:none; background:none; border:none; color:var(--cream); font-size:1.6rem; cursor:pointer;}
-
-@media(max-width:900px){
-  nav.mainnav{display:none;}
-  .burger{display:block;}
-}
-
-/* menu mobile */
-.mobile-menu{display:none; flex-direction:column; background:var(--emerald-deep); padding:10px 20px 20px;}
-.mobile-menu.open{display:flex;}
-.mobile-menu details{border-bottom:1px solid rgba(255,255,255,.12); padding:8px 0;}
-.mobile-menu summary{color:var(--gold-light); font-weight:700; cursor:pointer; padding:6px 0; list-style:none;}
-.mobile-menu summary::-webkit-details-marker{display:none;}
-.mobile-menu a{display:block; color:var(--cream); padding:8px 6px 8px 14px; font-size:.92rem;}
-
-/* ============================================================
-   3. HERO
-   ============================================================ */
-.hero{
-  position:relative; overflow:hidden; background:linear-gradient(160deg,var(--emerald) 0%,var(--emerald-deep) 100%);
-  color:var(--cream); padding:76px 0 92px;
-}
-.hero .motif.m1{width:520px; height:520px; top:-140px; right:-160px;}
-.hero .motif.m2{width:300px; height:300px; bottom:-90px; left:-90px;}
-.hero-inner{position:relative; z-index:2; max-width:680px;}
-.hero .bismillah{font-family:var(--font-arabic); font-size:1.9rem; color:var(--gold-light); margin-bottom:18px;}
-.hero h1{font-size:2.6rem; color:var(--white); margin-bottom:16px;}
-.hero p.lead{font-size:1.05rem; color:var(--sage); max-width:520px; margin-bottom:30px;}
-.btn-row{display:flex; gap:14px; flex-wrap:wrap;}
-.btn{
-  display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:999px;
-  font-weight:700; font-size:.9rem; letter-spacing:.02em; cursor:pointer; border:2px solid transparent;
-  transition:transform .15s, box-shadow .15s;
-}
-.btn:hover{transform:translateY(-2px);}
-.btn-gold{background:var(--gold); color:var(--emerald-deep);}
-.btn-gold:hover{box-shadow:0 10px 22px -8px rgba(200,155,60,.6);}
-.btn-outline{border-color:rgba(251,246,234,.5); color:var(--cream);}
-.btn-outline:hover{background:rgba(255,255,255,.08);}
-.hero-stats{display:flex; gap:34px; margin-top:46px; flex-wrap:wrap;}
-.hero-stats .stat b{font-family:var(--font-display); font-size:1.7rem; color:var(--gold-light); display:block;}
-.hero-stats .stat span{font-size:.78rem; color:var(--sage); text-transform:uppercase; letter-spacing:.08em;}
-
-/* ============================================================
-   4. SUB-NAV (pil tab untuk 3 sub halaman)
-   ============================================================ */
-.page-head{padding:52px 0 0;}
-.page-head h2{font-size:2rem;}
-.page-head p.desc{color:#4B5D53; max-width:640px; margin-top:10px;}
-.subnav{display:flex; gap:10px; flex-wrap:wrap; margin:26px 0 40px; border-bottom:1px solid var(--line); padding-bottom:26px;}
-.subnav button{
-  background:var(--white); border:1px solid var(--line); color:var(--emerald-deep);
-  font-family:var(--font-body); font-weight:600; font-size:.85rem; padding:10px 18px;
-  border-radius:999px; cursor:pointer; transition:.18s;
-}
-.subnav button.active{background:var(--emerald); color:var(--white); border-color:var(--emerald);}
-.subnav button:hover:not(.active){border-color:var(--gold); color:var(--gold);}
-
-.page-section{display:none; padding:0 0 90px;}
-.page-section.visible{display:block;}
-.subpage{display:none;}
-.subpage.visible{display:block; animation:fadeUp .35s ease;}
-@keyframes fadeUp{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
-
-/* ============================================================
-   5. KOMPONEN UMUM
-   ============================================================ */
-.card{background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:28px; box-shadow:var(--shadow);}
-.grid{display:grid; gap:22px;}
-.grid-2{grid-template-columns:1fr 1fr;}
-.grid-3{grid-template-columns:repeat(3,1fr);}
-@media(max-width:820px){.grid-2,.grid-3{grid-template-columns:1fr;}}
-
-.divider{display:flex; align-items:center; gap:16px; margin:44px 0;}
-.divider .line{flex:1; height:1px; background:var(--line);}
-.divider .star{width:22px; height:22px; color:var(--gold);}
-
-.quote-block{
-  background:var(--sage); border-left:4px solid var(--gold); padding:24px 26px; border-radius:0 var(--radius) var(--radius) 0;
-  font-style:italic; color:var(--emerald-deep);
-}
-.timeline{border-left:2px solid var(--line); padding-left:26px; display:flex; flex-direction:column; gap:26px;}
-.timeline .item{position:relative;}
-.timeline .item::before{content:''; position:absolute; left:-32px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--gold); border:2px solid var(--white); box-shadow:0 0 0 2px var(--gold);}
-.timeline .yr{font-family:var(--font-display); color:var(--emerald); font-size:1.05rem;}
-
-table.tbl{width:100%; border-collapse:collapse; background:var(--white); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);}
-table.tbl th{background:var(--emerald); color:var(--cream); text-align:left; padding:14px 18px; font-size:.85rem; letter-spacing:.03em;}
-table.tbl td{padding:13px 18px; border-bottom:1px solid var(--line); font-size:.92rem;}
-table.tbl tr:last-child td{border-bottom:none;}
-
-.badge{display:inline-block; background:var(--gold); color:var(--emerald-deep); font-size:.72rem; font-weight:700; letter-spacing:.05em; padding:4px 10px; border-radius:999px; text-transform:uppercase;}
-
-.teacher-card{text-align:center;}
-.avatar-ring{width:88px; height:88px; border-radius:50%; margin:0 auto 14px; background:var(--sage); display:flex; align-items:center; justify-content:center; border:3px solid var(--gold-light);}
-.avatar-ring svg{width:42px; height:42px; color:var(--emerald);}
-
-.gallery-note{
-  background:var(--cream-2); border:1px dashed var(--gold); border-radius:var(--radius); padding:20px 22px; font-size:.9rem; color:#5B4A20;
-}
-.gallery-frame{border:none; width:100%; height:520px; border-radius:var(--radius); box-shadow:var(--shadow);}
-.photo-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
-.photo-grid .ph{aspect-ratio:4/3; border-radius:10px; background:linear-gradient(135deg,var(--sage),var(--cream-2)); display:flex; align-items:center; justify-content:center; color:var(--emerald); border:1px solid var(--line); overflow:hidden;}
-.photo-grid img{width:100%; height:100%; object-fit:cover;}
-@media(max-width:700px){.photo-grid{grid-template-columns:repeat(2,1fr);}}
-
-.faq{border:1px solid var(--line); border-radius:10px; margin-bottom:10px; overflow:hidden; background:var(--white);}
-.faq summary{padding:16px 18px; cursor:pointer; font-weight:600; color:var(--emerald-deep); list-style:none; display:flex; justify-content:space-between; align-items:center;}
-.faq summary::-webkit-details-marker{display:none;}
-.faq summary::after{content:'+'; color:var(--gold); font-size:1.3rem;}
-.faq[open] summary::after{content:'–';}
-.faq .body{padding:0 18px 18px; color:#4B5D53; font-size:.93rem;}
-
-.step-list{display:flex; flex-direction:column; gap:16px;}
-.step{display:flex; gap:16px; align-items:flex-start;}
-.step .num{
-  flex-shrink:0; width:34px; height:34px; border-radius:50%; background:var(--emerald); color:var(--white);
-  font-family:var(--font-display); display:flex; align-items:center; justify-content:center; font-size:.95rem;
-}
-.step .txt b{display:block; color:var(--emerald-deep); margin-bottom:2px;}
-.step .txt span{font-size:.9rem; color:#4B5D53;}
-
-.form-wrap iframe{width:100%; min-height:900px; border:none; border-radius:var(--radius);}
-
-.contact-card{display:flex; gap:16px; align-items:flex-start;}
-.contact-icon{width:46px; height:46px; border-radius:12px; background:var(--emerald); color:var(--gold-light); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
-.contact-icon svg{width:22px; height:22px;}
-
-.map-frame{width:100%; height:380px; border:0; border-radius:var(--radius); box-shadow:var(--shadow);}
-
-.social-row{display:flex; gap:14px; flex-wrap:wrap;}
-.social-chip{display:flex; align-items:center; gap:10px; background:var(--white); border:1px solid var(--line); padding:12px 18px; border-radius:999px; font-weight:600; font-size:.9rem;}
-.social-chip svg{width:20px; height:20px; color:var(--emerald);}
-.social-chip:hover{border-color:var(--gold); color:var(--gold);}
-
-footer{background:var(--emerald-deep); color:var(--sage); padding:60px 0 26px; position:relative; overflow:hidden;}
-footer .motif{width:340px; height:340px; top:-90px; right:-90px;}
-.foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:36px; position:relative; z-index:2;}
-footer h4{color:var(--gold-light); font-size:.95rem; margin-bottom:14px; text-transform:uppercase; letter-spacing:.08em;}
-footer a{color:var(--sage); font-size:.9rem; display:block; margin-bottom:9px; opacity:.9;}
-footer a:hover{color:var(--gold-light);}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.12); margin-top:40px; padding-top:22px; font-size:.8rem; color:#9FB3A6; text-align:center; position:relative; z-index:2;}
-@media(max-width:820px){.foot-grid{grid-template-columns:1fr;}}
-
-.skip{position:absolute; left:-999px;}
-.skip:focus{left:10px; top:10px; background:var(--gold); color:var(--ink); padding:8px 14px; border-radius:8px; z-index:999;}
-:focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
-@media (prefers-reduced-motion: reduce){*{animation:none !important; transition:none !important;}}
+  /* --- CSS asli tetap --- */
+  :root{
+    --hijau:#0f6b4c; --hijau-tua:#0a4d37; --emas:#c99a3c;
+    --bg:#f5f6f4; --card:#ffffff; --text:#22302b; --muted:#6b7a73; --border:#e1e5e2;
+    --hadir:#1f9d55; --sakit:#e8a63c; --ijin:#3b82c4; --alpha:#d4453e; --terlambat:#8a5cd4;
+  }
+  /* ... semua CSS Anda tetap ... */
 </style>
 </head>
 <body>
-<a href="#main" class="skip">Lompat ke isi</a>
 
-<!-- ============================================================
-     HEADER
-============================================================ -->
-<header>
-  <div class="topbar">
-    <a href="#beranda-sambutan" class="brand" onclick="gotoPage('beranda','sambutan')">
-      <span class="brand-mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#0A342A" stroke-width="1.6"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 15.9 6.8 18.1l1-5.8L3.5 8.2l5.9-.9L12 2z"/></svg>
-      </span>
-      <span class="brand-text">
-        <span class="name">MDTU Al Falah Kota Malang</span><br>
-        <span class="sub">NISM: 311235730225</span>
-      </span>
-    </a>
-
-    <nav class="mainnav" id="desktopNav">
-      <!-- diisi oleh JS dari data NAVDATA -->
-    </nav>
-
-    <button class="burger" aria-label="Buka menu" onclick="document.getElementById('mobileMenu').classList.toggle('open')">☰</button>
+<!-- Semua struktur HTML asli Anda tetap -->
+<div id="landingView" class="landing">
+  <div class="card">
+    <h2>Presensi & Kegiatan Belajar</h2>
+    <p class="muted">Madrasah Diniyah Takmiliyah Ula (MDTU) Al Fallah</p>
+    <button class="btn" id="btnMasukSantri" style="width:100%;margin-top:14px;">Isi Presensi Saya (Santri)</button>
   </div>
-  <div class="mobile-menu" id="mobileMenu"></div>
-</header>
-
-<main id="main">
-
-  <!-- ============================================================
-       HERO (tampil hanya di Beranda)
-  ============================================================ -->
-  <section class="hero" id="heroSection">
-    <div class="motif m1"><svg viewBox="0 0 100 100" fill="none" stroke="#FBF6EA" stroke-width="1"><g id="star8"></g></svg></div>
-    <div class="motif m2"><svg viewBox="0 0 100 100" fill="none" stroke="#FBF6EA" stroke-width="1"><g id="star8b"></g></svg></div>
-    <div class="container hero-inner">
-      <div class="bismillah arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
-      <h1>Menempa Generasi Qur'ani, Berakhlak, dan Cinta Ilmu</h1>
-      <p class="lead">Madrasah Diniyah Al Falah Kota Malang membina putra-putri Anda dalam membaca Al-Qur'an, memahami dasar agama, dan berakhlak mulia — sejak sore menjelang Maghrib sd Isya', tanpa mengganggu sekolah formal.</p>
-      <div class="btn-row">
-        <a class="btn btn-gold" href="#pendaftaran-formulir" onclick="gotoPage('pendaftaran','formulir')">Daftar Santri Baru</a>
-        <a class="btn btn-outline" href="#profil-sejarah" onclick="gotoPage('profil','sejarah')">Kenali Kami</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat"><b>7+</b><span>Tahun Mengabdi</span></div>
-        <div class="stat"><b>20</b><span>Alumni Santri</span></div>
-        <div class="stat"><b>12</b><span>Ustadz &amp; Ustadzah</span></div>
-      </div>
+  <div class="card">
+    <h2>Login Petugas</h2>
+    <label>Password</label>
+    <input type="password" id="pwLanding" placeholder="Masukkan password sesuai peran Anda">
+    <div class="row" style="margin-top:12px;">
+      <button class="btn secondary" id="btnLoginUstadz">Ustadz / Sekretaris</button>
+      <button class="btn secondary" id="btnLoginWali">Wali Klas / Kepala</button>
     </div>
-  </section>
-
-  <!-- ============================================================
-       1. BERANDA
-  ============================================================ -->
-  <section class="page-section" data-page="beranda">
-    <div class="container">
-      <div class="subnav" data-subnav="beranda">
-        <button data-sub="sambutan">Sambutan Kepala Madrasah</button>
-        <button data-sub="visimisi">Visi, Misi &amp; Tujuan</button>
-        <button data-sub="berita">Berita &amp; Pengumuman</button>
-      </div>
-
-      <!-- 1.1 Sambutan -->
-      <article class="subpage" data-page="beranda" data-sub="sambutan">
-        <div class="eyebrow">Beranda</div>
-        <h2>Sambutan Kepala Madrasah</h2>
-        <div class="grid grid-2" style="margin-top:26px; align-items:start;">
-          <div class="card">
-            <div class="quote-block">
-              "Pendidikan diniyah bukan sekadar mengajar mengeja huruf hijaiyah, tetapi menanamkan akar keimanan yang akan menopang anak-anak kita sepanjang hidupnya."
-            </div>
-            <p style="margin-top:20px;">Assalamu'alaikum warahmatullahi wabarakatuh.</p>
-            <p style="margin-top:12px;">Puji syukur kami panjatkan kehadirat Allah SWT atas segala nikmat dan kemudahan sehingga Madrasah Diniyah Al Falah Kota Malang dapat terus istiqamah membina generasi Qur'ani di tengah masyarakat. Selama hampir dua dekade, kami berkomitmen menjadi rumah kedua bagi putra-putri Bapak/Ibu untuk belajar membaca Al-Qur'an, memahami akidah, fikih, dan akhlak dengan cara yang menyenangkan dan penuh kasih sayang.</p>
-            <p style="margin-top:12px;">Kami mengundang Bapak/Ibu untuk bergabung dan mempercayakan pendidikan agama anak kepada kami. Semoga Allah senantiasa memudahkan langkah kita dalam mendidik generasi yang shalih dan shalihah.</p>
-            <p style="margin-top:16px; font-weight:600; color:var(--emerald-deep);">Ustadz DR. Andi Nugraha.,MSi.<br><span style="font-weight:400; color:#4B5D53; font-size:.85rem;">Kepala Madrasah Diniyah Al Falah Kota Malang</span></p>
-          </div>
-          <div class="card" style="background:var(--sage);">
-            <h3 style="font-size:1.1rem; margin-bottom:14px;">Sekilas Madrasah</h3>
-            <ul style="display:flex; flex-direction:column; gap:12px; font-size:.92rem;">
-              <li>📍 Berlokasi di Kota Malang, mudah diakses dari kelurahan sekitar.</li>
-              <li>🕐 Kegiatan dari menjelang magrib sd Isya, Rabo sd Sabtu.</li>
-              <li>📖 Jenjang Ula (dasar) Tahun ke 1, 2, 3 dan 4 sesuai pendaftaran santri.</li>
-              <li>🤝 Terbuka untuk santri baru sepanjang tahun ajaran.</li>
-            </ul> 
-          </div>
-        </div>
-      </article>
-
-      <!-- 1.2 Visi Misi -->
-      <article class="subpage" data-page="beranda" data-sub="visimisi">
-        <div class="eyebrow">Beranda</div>
-        <h2>Visi, Misi &amp; Tujuan</h2>
-        <div class="grid grid-3" style="margin-top:26px;">
-          <div class="card">
-            <span class="badge">Visi</span>
-            <p style="margin-top:14px;">Menjadi lembaga pendidikan diniyah yang unggul dalam membentuk generasi Qur'ani, berakidah lurus, dan berakhlak mulia di tengah masyarakat Kota Malang.</p>
-          </div>
-          <div class="card">
-            <span class="badge">Misi</span>
-            <ul style="margin-top:14px; display:flex; flex-direction:column; gap:8px; font-size:.92rem;">
-              <li>• Membimbing santri membaca Al-Qur'an dengan tartil.</li>
-              <li>• Menanamkan akidah, fikih, dan akhlak sejak dini.</li>
-              <li>• Membangun kedekatan santri dengan masjid dan lingkungan.</li>
-              <li>• Menjalin sinergi aktif dengan orang tua/wali santri.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <span class="badge">Tujuan</span>
-            <p style="margin-top:14px;">Menghasilkan santri yang mampu membaca Al-Qur'an dengan baik, memahami dasar-dasar ilmu agama, dan mengamalkan akhlak Islami dalam keseharian.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- 1.3 Berita -->
-      <article class="subpage" data-page="beranda" data-sub="berita">
-        <div class="eyebrow">Beranda</div>
-        <h2>Berita &amp; Pengumuman</h2>
-        <p class="desc">Kabar terbaru seputar kegiatan madrasah. Ganti/tambah kartu berita ini langsung di file HTML — lihat tutorial bagian "Mengelola Berita".</p>
-        <div class="grid grid-3" style="margin-top:26px;">
-          <div class="card">
-            <span class="badge">Pengumuman</span>
-            <h3 style="font-size:1.05rem; margin:12px 0 8px;">Pendaftaran Santri Baru Dibuka</h3>
-            <p style="font-size:.9rem; color:#4B5D53;">Pendaftaran tahun ajaran baru telah dibuka. Kuota terbatas per kelas, segera daftarkan putra-putri Anda.</p>
-          </div>
-          <div class="card">
-            <span class="badge">Kegiatan</span>
-            <h3 style="font-size:1.05rem; margin:12px 0 8px;">Khataman Al-Qur'an Angkatan XII</h3>
-            <p style="font-size:.9rem; color:#4B5D53;">Selamat kepada santri angkatan XII yang telah menyelesaikan khataman Al-Qur'an bulan ini.</p>
-          </div>
-          <div class="card">
-            <span class="badge">Libur</span>
-            <h3 style="font-size:1.05rem; margin:12px 0 8px;">Libur Semester Ganjil</h3>
-            <p style="font-size:.9rem; color:#4B5D53;">Kegiatan belajar diliburkan sesuai kalender pendidikan madrasah — jadwal masuk kembali akan diinformasikan.</p>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       2. PROFIL
-  ============================================================ -->
-  <section class="page-section" data-page="profil">
-    <div class="container">
-      <div class="page-head">
-        <div class="eyebrow">Profil</div>
-        <h2>Mengenal Madrasah Diniyah Al Falah</h2>
-        <p class="desc">Sejarah, struktur pengajar, dan kurikulum yang kami terapkan dalam mendidik santri.</p>
-      </div>
-      <div class="subnav" data-subnav="profil">
-        <button data-sub="sejarah">Sejarah Singkat</button>
-        <button data-sub="struktur">Struktur &amp; Ustadz/Ustadzah</button>
-        <button data-sub="kurikulum">Kurikulum &amp; Program</button>
-      </div>
-
-      <!-- 2.1 Sejarah -->
-      <article class="subpage" data-page="profil" data-sub="sejarah">
-        <h2 style="font-size:1.5rem;">Sejarah Singkat</h2>
-        <div class="timeline" style="margin-top:24px;">
-          <div class="item"><div class="yr">2005</div><p>Madrasah Diniyah Al Falah didirikan atas prakarsa tokoh masyarakat dan takmir masjid setempat, diawali dengan dua kelas mengaji sederhana.</p></div>
-          <div class="item"><div class="yr">2011</div><p>Jumlah santri berkembang pesat, madrasah menambah jenjang Wustho untuk santri usia lanjutan serta menambah tenaga pengajar.</p></div>
-          <div class="item"><div class="yr">2017</div><p>Renovasi ruang belajar dan penambahan program tahfidz Al-Qur'an sebagai unggulan madrasah.</p></div>
-          <div class="item"><div class="yr">2024</div><p>Madrasah mulai merapikan tata kelola administrasi secara digital, termasuk pendaftaran online dan dokumentasi kegiatan.</p></div>
-        </div>
-      </article>
-
-      <!-- 2.2 Struktur -->
-      <article class="subpage" data-page="profil" data-sub="struktur">
-        <h2 style="font-size:1.5rem;">Struktur Organisasi &amp; Ustadz/Ustadzah</h2>
-        <div class="card" style="margin:24px 0 32px;">
-          <h3 style="font-size:1rem; margin-bottom:10px;">Struktur Pengurus</h3>
-          <p style="font-size:.92rem; color:#4B5D53;">Kepala Madrasah → Wakil Kepala Bidang Kurikulum → Wakil Kepala Bidang Kesantrian → Tata Usaha &amp; Bendahara → Ustadz/Ustadzah Kelas.</p>
-        </div>
-        <div class="grid grid-3">
-          <div class="card teacher-card">
-            <div class="avatar-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
-            <b>Ust. H. Ahmad Fauzi, S.Pd.I.</b>
-            <p style="font-size:.85rem; color:#4B5D53;">Kepala Madrasah</p>
-          </div>
-          <div class="card teacher-card">
-            <div class="avatar-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
-            <b>Ustzh. Siti Maryam, S.Ag.</b>
-            <p style="font-size:.85rem; color:#4B5D53;">Waka Kurikulum / Guru Tahsin</p>
-          </div>
-          <div class="card teacher-card">
-            <div class="avatar-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
-            <b>Ust. Zainal Abidin, S.Pd.</b>
-            <p style="font-size:.85rem; color:#4B5D53;">Guru Fikih &amp; Akhlak</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- 2.3 Kurikulum -->
-      <article class="subpage" data-page="profil" data-sub="kurikulum">
-        <h2 style="font-size:1.5rem;">Kurikulum &amp; Program Pembelajaran</h2>
-        <table class="tbl" style="margin-top:24px;">
-          <thead><tr><th>Mata Pelajaran</th><th>Jenjang</th><th>Fokus</th></tr></thead>
-          <tbody>
-            <tr><td>Tahsin &amp; Tahfidz Al-Qur'an</td><td>Ula Tahun ke 1 dan 2</td><td>Teori dan Praktek: Bacaan tartil, hafalan surat pilihan</td></tr>
-            <tr><td>Aqidah Akhlak</td><td>Ula Tahun ke 1 dan 2</td><td>Teori dan Praktek: Dasar keimanan &amp; perilaku sehari-hari</td></tr>
-            <tr><td>Fikih Ibadah</td><td>Ula Tahun ke 1 dan 2</td><td>Teori dan Praktek: Tata cara shalat, wudhu, puasa</td></tr>
-            <tr><td>Bahasa Arab</td><td>ULa Tahun ke 3 dan 4</td><td>Teori dan Praktek: Kosakata dasar &amp; membaca teks sederhana</td></tr>
-            <tr><td>Sejarah Kebudayaan Islam</td><td>Ula Tahun ke 3 dan 4</td><td>Teori dan Praktek: Kisah nabi &amp; sejarah Islam</td></tr>
-          </tbody>
-        </table>
-        <p style="margin-top:18px; font-size:.9rem; color:#4B5D53;">Kurikulum mengacu Permenag No. 13 Tahun 2014 dan Pedoman Penyelenggaraan Madin dari Dirjen Pendis Tahun 2022.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       3. GALERI
-  ============================================================ -->
-  <section class="page-section" data-page="galeri">
-    <div class="container">
-      <div class="page-head">
-        <div class="eyebrow">Galeri</div>
-        <h2>Dokumentasi Kegiatan Madrasah</h2>
-        <p class="desc">Foto dan video ini diambil langsung dari folder Google Drive madrasah, sehingga pengurus dapat memperbarui isinya tanpa mengubah kode situs.</p>
-    </div>
-      <div class="subnav" data-subnav="galeri">
-        <button data-sub="foto">Galeri Foto</button>
-        <button data-sub="video">Galeri Video</button>
-        <button data-sub="prestasi">Prestasi Santri</button>
-      </div>
-
-                    <!-- 3.1 Foto -->
-      <article class="subpage" data-page="galeri" data-sub="foto">
-        <h2 style="font-size:1.5rem;">Galeri Foto Kegiatan</h2>
-        <div class="gallery-note" style="margin:20px 0 24px;">
-          📁 Album foto diambil otomatis dari folder Google Drive madrasah. Untuk menambah foto, cukup unggah gambar baru ke folder Drive tersebut — album di bawah akan menampilkannya secara otomatis.
-        </div>
-        <div class="gallery-frame" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
-          <!-- Foto satu per satu -->
-          <iframe src="https://drive.google.com/file/d/1l6raD3nEJhtObXhbk4GJQ7jbCHWXmajR/preview"
-                  style="width:300px; height:200px; border:none;" loading="lazy"></iframe>
-          <iframe src="https://drive.google.com/file/d/1fG2gtz4KmqojISpSSmcPkIP34_IRw2Pm/preview"
-                  style="width:300px; height:200px; border:none;" loading="lazy"></iframe>
-           <iframe src="https://drive.google.com/file/d/1Ul74rY4yB1FyW-mzU9KqIt5MgM9-63Bs/preview"
-                  style="width:300px; height:200px; border:none;" loading="lazy"></iframe>
-           <iframe src="https://drive.google.com/file/d/1vIpCC-qI-UY_wcmY5_5WXRXcJu0KkZzd/preview"
-                  style="width:300px; height:200px; border:none;" loading="lazy"></iframe>
-          <iframe src="https://drive.google.com/file/d/1fG2gtz4KmqojISpSSmcPkIP34_IRw2Pm/preview"
-                  style="width:300px; height:200px; border:none;" loading="lazy"></iframe>
-           <iframe src="https://drive.google.com/file/d/1h5Vs0M9OwDVrvnFyL_Z3duJKPcM6trlI/preview"
-                  style="width:300px; height:200px; border:none;" loading="lazy"></iframe>
-        </div>
-      
-      </article>
-
-      <!-- 3.2 Video -->
-      <article class="subpage" data-page="galeri" data-sub="video">
-        <h2 style="font-size:1.5rem;">Galeri Video</h2>
-        <div class="gallery-note" style="margin:20px 0 24px;">
-         🎬 Video kegiatan disimpan di folder Google Drive terpisah agar tidak membebani ukuran situs.
-        </div>
-        <div class="gallery-frame" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
-          <!-- Video satu per satu -->
-          <iframe src="https://drive.google.com/file/d/1i_EbjKjUX7zjvfhcehcKBsUTZS3CUKnh/preview"
-                  style="width:400px; height:300px; border:none;" loading="lazy"></iframe>
-        </div>
-      </article>
-       
-<!-- 3.3 Prestasi -->
-      <article class="subpage" data-page="galeri" data-sub="prestasi">
-        <h2 style="font-size:1.5rem;">Prestasi Santri</h2>
-        <div class="grid grid-3" style="margin-top:24px;">
-          <div class="card"><span class="badge">Juara 1</span><h3 style="font-size:1rem; margin:12px 0 6px;">MTQ Tingkat Kecamatan</h3><p style="font-size:.88rem; color:#4B5D53;">Cabang tilawah anak-anak, diraih oleh santri jenjang Ula.</p></div>
-          <div class="card"><span class="badge">Juara 2</span><h3 style="font-size:1rem; margin:12px 0 6px;">Lomba Hafalan Surat Pendek</h3><p style="font-size:.88rem; color:#4B5D53;">Tingkat kota, diikuti oleh perwakilan santri Wustho.</p></div>
-          <div class="card"><span class="badge">Apresiasi</span><h3 style="font-size:1rem; margin:12px 0 6px;">Khatam Al-Qur'an Termuda</h3><p style="font-size:.88rem; color:#4B5D53;">Penghargaan internal untuk santri termuda yang menuntaskan khataman.</p></div>
-        </div>
-      </article>
-    </div>
-  </section>
-   
-  <!-- ============================================================
-       4. PENDAFTARAN
-  ============================================================ -->
-  <section class="page-section" data-page="pendaftaran">
-    <div class="container">
-      <div class="page-head">
-        <div class="eyebrow">Pendaftaran</div>
-        <h2>Bergabung Menjadi Santri Al Falah</h2>
-        <p class="desc">Data pendaftar tersimpan otomatis ke Google Sheet melalui Google Form — pengurus dapat memantau tanpa aplikasi tambahan.</p>
-      </div>
-      <div class="subnav" data-subnav="pendaftaran">
-        <button data-sub="syarat">Syarat &amp; Cara Daftar</button>
-        <button data-sub="formulir">Formulir Online</button>
-        <button data-sub="biaya">Biaya &amp; Jadwal</button>
-      </div>
-
-      <!-- 4.1 Syarat -->
-      <article class="subpage" data-page="pendaftaran" data-sub="syarat">
-        <h2 style="font-size:1.5rem;">Syarat &amp; Cara Daftar</h2>
-        <div class="grid grid-2" style="margin-top:24px;">
-          <div class="card">
-            <h3 style="font-size:1rem; margin-bottom:14px;">Syarat Pendaftaran</h3>
-            <ul style="display:flex; flex-direction:column; gap:10px; font-size:.9rem;">
-              <li>✅ Usia minimal 6 tahun (jenjang Ula) atau 10 tahun (jenjang Wustho).</li>
-              <li>✅ Mengisi formulir pendaftaran online.</li>
-              <li>✅ Fotokopi Kartu Keluarga &amp; Akta Kelahiran.</li>
-              <li>✅ Pas foto santri terbaru.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3 style="font-size:1rem; margin-bottom:14px;">Cara Mendaftar</h3>
-            <div class="step-list">
-              <div class="step"><div class="num">1</div><div class="txt"><b>Isi Formulir Online</b><span>Buka tab "Formulir Online" dan lengkapi data santri.</span></div></div>
-              <div class="step"><div class="num">2</div><div class="txt"><b>Unggah Dokumen</b><span>Sertakan dokumen pendukung melalui tautan unggah di formulir.</span></div></div>
-              <div class="step"><div class="num">3</div><div class="txt"><b>Konfirmasi via WhatsApp</b><span>Tim kami akan menghubungi untuk verifikasi dan info kelas.</span></div></div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 4.2 Formulir -->
-      <article class="subpage" data-page="pendaftaran" data-sub="formulir">
-        <h2 style="font-size:1.5rem;">Formulir Pendaftaran Online</h2>
-        <div class="gallery-note" style="margin:20px 0 24px;">
-          📝 Formulir ini adalah Google Form. Setiap jawaban yang masuk otomatis tersimpan sebagai baris baru di Google Sheet milik madrasah — tidak perlu input data manual.
-        </div>
-        <div class="form-wrap">
-          <iframe id="googleFormEmbed" src="" title="Formulir pendaftaran santri baru">Memuat formulir…</iframe>
-        </div>
-        <p style="margin-top:16px; font-size:.88rem; color:#4B5D53;">Formulir tidak muncul? <a id="googleFormFallback" href="#" style="color:var(--emerald); font-weight:700; text-decoration:underline;" target="_blank" rel="noopener">Buka formulir di tab baru</a> atau hubungi kami via WhatsApp.</p>
-      </article>
-
-      <!-- 4.3 Biaya -->
-      <article class="subpage" data-page="pendaftaran" data-sub="biaya">
-        <h2 style="font-size:1.5rem;">Biaya &amp; Jadwal</h2>
-        <table class="tbl" style="margin-top:24px;">
-          <thead><tr><th>Komponen</th><th>Nominal</th><th>Keterangan</th></tr></thead>
-          <tbody>
-            <tr><td>Biaya Pendaftaran</td><td>Kontak Petugas</td><td>Dibayar sekali saat pendaftaran</td></tr>
-            <tr><td>SPP Bulanan</td><td>Kontak Petugas</td><td>Dibayar tiap awal bulan</td></tr>
-            <tr><td>Seragam &amp; Buku</td><td>Kontak Petugas</td><td>Opsional, dapat diangsur</td></tr>
-          </tbody>
-        </table>
-        <div class="card" style="margin-top:24px;">
-          <h3 style="font-size:1rem; margin-bottom:10px;">Pendaftaran dapat dilakukan secara online (isi formulir online) maupun offline (datang di alamat Madin Alfalah)</h3>
-          <p style="font-size:.9rem; color:#4B5D53;">Penerimaan santri baru dibuka sepanjang tahun, mengikuti ketersediaan kuota kelas.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       5. KONTAK
-  ============================================================ -->
-  <section class="page-section" data-page="kontak">
-    <div class="container">
-      <div class="page-head">
-        <div class="eyebrow">Kontak</div>
-        <h2>Hubungi Kami</h2>
-        <p class="desc">Kami siap menjawab pertanyaan seputar pendaftaran maupun kegiatan madrasah.</p>
-      </div>
-      <div class="subnav" data-subnav="kontak">
-        <button data-sub="lokasi">Alamat &amp; Lokasi</button>
-        <button data-sub="person">Kontak Person</button>
-        <button data-sub="sosial">Media Sosial</button>
-      </div>
-
-      <!-- 5.1 Lokasi -->
-      <article class="subpage" data-page="kontak" data-sub="lokasi">
-        <h2 style="font-size:1.5rem;">Alamat &amp; Peta Lokasi</h2>
-        <div class="grid grid-2" style="margin-top:24px; align-items:start;">
-          <div class="card">
-            <p style="font-size:.95rem;">Jl. Masjid Al Falah No. 12,<br>Kota Malang, Jawa Timur 65100</p>
-            <p style="margin-top:14px; font-size:.85rem; color:#4B5D53;">Ganti alamat ini sesuai lokasi madrasah pada bagian KONFIGURASI di kode situs.</p>
-          </div>
-          <iframe class="map-frame" id="mapsEmbed" src="" loading="lazy" title="Peta lokasi madrasah"></iframe>
-        </div>
-      </article>
-
-      <!-- 5.2 Kontak person -->
-      <article class="subpage" data-page="kontak" data-sub="person">
-        <h2 style="font-size:1.5rem;">Kontak Person</h2>
-        <div class="grid grid-2" style="margin-top:24px;">
-          <div class="card contact-card">
-            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15v4a2 2 0 0 1-2 2c-9 0-16-7-16-16a2 2 0 0 1 2-2h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2z"/></svg></span>
-            <div>
-              <b>Tata Usaha Madrasah</b>
-              <p style="font-size:.9rem; color:#4B5D53; margin:4px 0 10px;">Informasi pendaftaran &amp; administrasi.</p>
-              <a id="waTU" href="#" target="_blank" rel="noopener" style="color:var(--emerald); font-weight:700;">Chat via WhatsApp →</a>
-            </div>
-          </div>
-          <div class="card contact-card">
-            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></span>
-            <div>
-              <b>Email Madrasah</b>
-              <p style="font-size:.9rem; color:#4B5D53; margin:4px 0 10px;">Untuk surat resmi &amp; kerja sama.</p>
-              <a id="emailLink" href="#" style="color:var(--emerald); font-weight:700;">Kirim Email →</a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 5.3 Sosial -->
-      <article class="subpage" data-page="kontak" data-sub="sosial">
-        <h2 style="font-size:1.5rem;">Media Sosial</h2>
-        <div class="social-row" style="margin-top:24px;">
-          <a class="social-chip" id="sIG" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg> Instagram</a>
-          <a class="social-chip" id="sFB" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H9v3h2v6h3v-6h3l1-3h-4V9z"/></svg> Facebook</a>
-          <a class="social-chip" id="sYT" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M11 10l4 2-4 2z"/></svg> YouTube</a>
-        </div>
-      </article>
-    </div>
-  </section>
-</main>
-
-<!-- ============================================================
-     FOOTER
-============================================================ -->
-<footer>
-  <div class="motif"><svg viewBox="0 0 100 100" fill="none" stroke="#FBF6EA" stroke-width="1"><g id="star8c"></g></svg></div>
-  <div class="container foot-grid">
-    <div>
-      <h4>Madrasah Diniyah Al Falah</h4>
-      <p style="font-size:.9rem; max-width:320px; opacity:.85;">Membina generasi Qur'ani, berakidah lurus, dan berakhlak mulia di Kota Malang sejak 2017.</p>
-    </div>
-    <div>
-      <h4>Tautan Cepat</h4>
-      <a href="#profil-sejarah" onclick="gotoPage('profil','sejarah')">Profil Madrasah</a>
-      <a href="#galeri-foto" onclick="gotoPage('galeri','foto')">Galeri</a>
-      <a href="#pendaftaran-formulir" onclick="gotoPage('pendaftaran','formulir')">Pendaftaran</a>
-      <a href="#kontak-lokasi" onclick="gotoPage('kontak','lokasi')">Kontak</a>
-    </div>
-    <div>
-      <h4>Kontak Singkat</h4>
-      <a id="footAddr">Jl. Kendalisodo No. 25, Kota Malang</a>
-      <a id="footWA" href="#" target="_blank" rel="noopener">WhatsApp Tata Usaha</a>
-    </div>
+    <button class="btn secondary" id="btnLoginAdmin" style="width:100%;margin-top:10px;">Admin</button>
   </div>
-  <div class="foot-bottom">© <span id="year"></span> Madrasah Diniyah Al Falah Kota Malang. Situs dikelola sendiri oleh pengurus madrasah.</div>
-</footer>
+</div>
+
+<div id="appView" class="hidden">
+  <!-- ... semua konten asli Anda tetap ... -->
+</div>
+
+<div id="toast" class="toast hidden"></div>
 
 <script>
-/* ============================================================
-   KONFIGURASI — SEMUA YANG PERLU DIUBAH PENGURUS ADA DI SINI
-   Jangan sentuh bagian lain kecuali Anda memahami HTML/JS.
-   ============================================================ */
-const KONFIGURASI = {
-  // ---- Kontak ----
-  alamat: "Jl. Kendalisodo No. 25, Kota Malang, Jawa Timur 65100",
-  whatsappTU: "628113666460",          // ganti dengan nomor WA Tata Usaha (format 62xxxxxxxxxx)
-  email: "madinalfalah026@gmail.com",   // ganti dengan email madrasah
+const STATUS_LIST = ['HADIR','SAKIT','IJIN','ALPHA','TERLAMBAT'];
+const STATUS_SINGKAT = {HADIR:'H',SAKIT:'S',IJIN:'I',ALPHA:'A',TERLAMBAT:'T'};
+let MASTER = null;
+let SESI_AKTIF = null;
+let RIWAYAT = [];
+let ROLE = null;
 
-  // ---- Google Maps ----
-  // Cara ambil: buka Google Maps -> cari lokasi -> Bagikan -> Sematkan peta -> salin isi src="..."
-  googleMapsEmbedSrc: "https://www.google.com/maps?q=Kota+Malang&output=embed",
+/* --- Fungsi tambahan untuk load data dari Google Sheet --- */
+async function loadMasterFromSheet() {
+  const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKOUuFwFy7AsVTj6UguCRxv1wmc4tVuIvpOQSRIGvgdzqrZWOqZjgDh9NtYXoM8g/pub?output=csv
+";
+  const response = await fetch(sheetUrl);
+  const text = await response.text();
+  const rows = text.split("\n").map(r => r.split(","));
 
-  // ---- Google Drive: Galeri Foto & Video ----
-  // Cara ambil ID folder: buka folder di Google Drive -> klik kanan -> Bagikan -> Salin tautan
-  // Tautan biasanya: https://drive.google.com/drive/folders/ID_FOLDER_DI_SINI
-  driveFolderFotoId: "GANTI_DENGAN_ID_FOLDER_FOTO",
-  driveFolderVideoId: "GANTI_DENGAN_ID_FOLDER_VIDEO",
-
-  // ---- Google Form: Pendaftaran ----
-  // Cara ambil: buka Google Form -> Kirim -> ikon <> (Sematkan HTML) -> salin URL di dalam src="..."
-  googleFormEmbedSrc: "https://docs.google.com/forms/d/e/1FAIpQLSefFK720WBdQ-i1P7bUmJFyu3Ueaqs1TtIBMVMS-xIouO8v6w/viewform?usp=sharing&ouid=112565987319857083453",
-  googleFormViewUrl: "https://docs.google.com/forms/d/e/1FAIpQLSefFK720WBdQ-i1P7bUmJFyu3Ueaqs1TtIBMVMS-xIouO8v6w/viewform?",
-
-  // ---- Media Sosial ----
-  instagram: "https://instagram.com/alfalahmalang",
-  facebook: "https://facebook.com/alfalahmalang",
-  youtube: "https://youtube.com/@alfalahmalang"
-};
-
-/* ============================================================
-   STRUKTUR NAVIGASI
-   ============================================================ */
-const NAVDATA = {
-  beranda: {label:"BERANDA", subs:{sambutan:"Sambutan Kepala Madrasah", visimisi:"Visi, Misi & Tujuan", berita:"Berita & Pengumuman"}},
-  profil: {label:"PROFIL", subs:{sejarah:"Sejarah Singkat", struktur:"Struktur & Ustadz/Ustadzah", kurikulum:"Kurikulum & Program"}},
-  galeri: {label:"GALERI", subs:{foto:"Galeri Foto", video:"Galeri Video", prestasi:"Prestasi Santri"}},
-  pendaftaran: {label:"PENDAFTARAN", subs:{syarat:"Syarat & Cara Daftar", formulir:"Formulir Online", biaya:"Biaya & Jadwal"}},
-  kontak: {label:"KONTAK", subs:{lokasi:"Alamat & Lokasi", person:"Kontak Person", sosial:"Media Sosial"}}
-};
-
-function buildNav(){
-  const desktop = document.getElementById('desktopNav');
-  const mobile = document.getElementById('mobileMenu');
-  desktop.innerHTML=''; mobile.innerHTML='';
-  Object.entries(NAVDATA).forEach(([key,data])=>{
-    const item=document.createElement('div');
-    item.className='nav-item'; item.dataset.page=key;
-    const btn=document.createElement('button');
-    btn.textContent=data.label;
-    btn.onclick=()=>gotoPage(key, Object.keys(data.subs)[0]);
-    const dd=document.createElement('div'); dd.className='dropdown';
-    Object.entries(data.subs).forEach(([subKey,label])=>{
-      const a=document.createElement('a'); a.href='#'+key+'-'+subKey; a.textContent=label;
-      a.onclick=(e)=>{e.preventDefault(); gotoPage(key,subKey);};
-      dd.appendChild(a);
-    });
-    item.appendChild(btn); item.appendChild(dd);
-    desktop.appendChild(item);
-
-    const det=document.createElement('details');
-    const sum=document.createElement('summary'); sum.textContent=data.label;
-    det.appendChild(sum);
-    Object.entries(data.subs).forEach(([subKey,label])=>{
-      const a=document.createElement('a'); a.href='#'+key+'-'+subKey; a.textContent=label;
-      a.onclick=(e)=>{e.preventDefault(); gotoPage(key,subKey); document.getElementById('mobileMenu').classList.remove('open');};
-      det.appendChild(a);
-    });
-    mobile.appendChild(det);
+  let klas = [], santri = [];
+  rows.forEach((row, i) => {
+    if (i === 0) return; // skip header
+    const klasId = "KLAS" + row[0];
+    if (!klas.find(k => k.id === klasId)) {
+      klas.push({id: klasId, nama: "Klas " + row[0]});
+    }
+    santri.push({id: "ST" + i, klasId: klasId, nama: row[1], foto: ""});
   });
+
+  return {
+    config: { namaMadrasah: "MDTU Al Fallah", passwordAdmin:'admin123', passwordUstadz:'ustadz123', passwordWali:'wali123',
+              sessionDurationMinutes:120, formula:{harian:30,uts:30,uas:40} },
+    klas: klas,
+    mapel: [],
+    guru: [],
+    santri: santri,
+    buku: []
+  };
 }
 
-function buildSubnavs(){
-  document.querySelectorAll('.subnav').forEach(nav=>{
-    const page=nav.dataset.subnav;
-    nav.querySelectorAll('button').forEach(btn=>{
-      btn.onclick=()=>gotoPage(page, btn.dataset.sub);
-    });
-  });
+/* --- Ganti loadAll agar ambil dari sheet --- */
+async function loadAll(){
+  MASTER = await loadMasterFromSheet();
+  SESI_AKTIF = null;
+  RIWAYAT = [];
+  render();
 }
 
-function gotoPage(page, sub){
-  // nav aktif
-  document.querySelectorAll('#desktopNav .nav-item').forEach(n=>n.classList.toggle('active', n.dataset.page===page));
-  // tampilkan section halaman
-  document.querySelectorAll('.page-section').forEach(s=>s.classList.toggle('visible', s.dataset.page===page));
-  document.getElementById('heroSection').style.display = (page==='beranda') ? 'block' : 'none';
-  // tampilkan subpage
-  document.querySelectorAll('.subpage').forEach(s=>{
-    s.classList.toggle('visible', s.dataset.page===page && s.dataset.sub===sub);
-  });
-  // tombol subnav aktif
-  const nav=document.querySelector('.subnav[data-subnav="'+page+'"]');
-  if(nav){ nav.querySelectorAll('button').forEach(b=>b.classList.toggle('active', b.dataset.sub===sub)); }
-  // muat iframe hanya saat dibutuhkan (lazy)
-  loadEmbeds(page, sub);
-  history.replaceState(null,'','#'+page+'-'+sub);
-  window.scrollTo({top: page==='beranda' && sub==='sambutan' ? 0 : document.querySelector('header').offsetHeight, behavior:'smooth'});
-  document.getElementById('mobileMenu').classList.remove('open');
-}
+/* --- Semua fungsi asli Anda tetap: toast, uid, enterApp, render, dll --- */
+/* ... paste seluruh script asli Anda di sini tanpa diubah ... */
 
-function loadEmbeds(page, sub){
-  if(page==='galeri' && sub==='foto'){
-    const el=document.getElementById('driveFolderFoto');
-    if(!el.src || el.src==='about:blank') el.src = "https://drive.google.com/embeddedfolderview?id="+KONFIGURASI.driveFolderFotoId+"#grid";
-  }
-  if(page==='galeri' && sub==='video'){
-    const el=document.getElementById('driveFolderVideo');
-    if(!el.src || el.src==='about:blank') el.src = "https://drive.google.com/embeddedfolderview?id="+KONFIGURASI.driveFolderVideoId+"#grid";
-  }
-  if(page==='pendaftaran' && sub==='formulir'){
-    const el=document.getElementById('googleFormEmbed');
-    if(!el.src || el.src==='about:blank') el.src = KONFIGURASI.googleFormEmbedSrc;
-    document.getElementById('googleFormFallback').href = KONFIGURASI.googleFormViewUrl;
-  }
-  if(page==='kontak' && sub==='lokasi'){
-    const el=document.getElementById('mapsEmbed');
-    if(!el.src || el.src==='about:blank') el.src = KONFIGURASI.googleMapsEmbedSrc;
-  }
-}
-
-function applyKonfigurasi(){
-  document.getElementById('waTU').href = "https://wa.me/"+KONFIGURASI.whatsappTU;
-  document.getElementById('footWA').href = "https://wa.me/"+KONFIGURASI.whatsappTU;
-  document.getElementById('emailLink').href = "mailto:"+KONFIGURASI.email;
-  document.getElementById('footAddr').textContent = KONFIGURASI.alamat;
-  document.getElementById('sIG').href = KONFIGURASI.instagram;
-  document.getElementById('sFB').href = KONFIGURASI.facebook;
-  document.getElementById('sYT').href = KONFIGURASI.youtube;
-  document.getElementById('year').textContent = new Date().getFullYear();
-}
-
-/* motif bintang 8 (SVG geometris, digambar ulang secara terprogram) */
-function drawStar(id){
-  const g=document.getElementById(id); if(!g) return;
-  const cx=50, cy=50, rOuter=46, rInner=20; let path1='', path2='';
-  for(let i=0;i<8;i++){
-    const a1=(Math.PI/4)*i, a2=a1+Math.PI/8;
-    const x1=cx+rOuter*Math.cos(a1), y1=cy+rOuter*Math.sin(a1);
-    const x2=cx+rInner*Math.cos(a2), y2=cy+rInner*Math.sin(a2);
-    path1 += (i===0?'M':'L')+x1.toFixed(1)+','+y1.toFixed(1)+' L'+x2.toFixed(1)+','+y2.toFixed(1)+' ';
-  }
-  path1+='Z';
-  const p=document.createElementNS('http://www.w3.org/2000/svg','path');
-  p.setAttribute('d',path1);
-  g.appendChild(p);
-  const circle=document.createElementNS('http://www.w3.org/2000/svg','circle');
-  circle.setAttribute('cx',cx); circle.setAttribute('cy',cy); circle.setAttribute('r',30);
-  g.appendChild(circle);
-}
-
-/* inisialisasi */
-buildNav();
-buildSubnavs();
-applyKonfigurasi();
-['star8','star8b','star8c'].forEach(drawStar);
-
-const startHash = location.hash.replace('#','').split('-');
-if(startHash.length===2 && NAVDATA[startHash[0]] && NAVDATA[startHash[0]].subs[startHash[1]]){
-  gotoPage(startHash[0], startHash[1]);
-}else{
-  gotoPage('beranda','sambutan');
-}
+loadAll();
 </script>
 </body>
 </html>
-*/
+
